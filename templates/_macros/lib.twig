@@ -1,0 +1,20 @@
+{% macro img(image, config = []) %}
+    {% set transform = config.transform ?? {width: 840} %}
+
+    {% if transform.format is not defined %}
+        {% set transform = transform|merge({format: 'webp'}) %}
+    {% endif %}
+
+    {% set srcset = config.srcset ?? [840, 480] %}
+
+    {% if transform.width is defined and transform.width < 480 %}
+        {% set srcset = null %}
+    {% endif %}
+
+
+    {% set attr = config.attr ?? {loading: 'lazy'} %}
+
+    {% set attr = attr | merge({alt: image.altText ?: image.title}) %}
+    {{ image.img(transform, srcset)|attr(attr) }}
+    
+{% endmacro %}

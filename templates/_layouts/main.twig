@@ -1,34 +1,47 @@
+{% apply spaceless %}
+    {# Needed in multiple places, so load in advance #}
+	{% set localizedEntries = entry.localized.all %}
+
+    {# let templates overwrite title #}
+    {% set title = title ?? entry.title %}
+
+    {# let templates overwrite featured image, use global images by default #}
+    {% set featuredImage = featuredImage ?? entry.featuredImage.one ?? siteInfo.featuredImage.one %}
+{% endapply %}
 <!DOCTYPE html>
 <html lang="{{ craft.app.language }}" style="overflow-y: scroll">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>{{ entry.title }} | {{ siteInfo.siteName }}</title>
-    <link href="{{ url('/assets/dist/app.css') }}" rel="stylesheet">
-
-    {# SEO things here, typically inserted by a plugin #}
-
+    {% include '_layouts/partials/head.twig' with {
+    	entry,
+        title,
+        localizedEntries
+    } only %}
 </head>
 
 <body class="bg-gray-50 text-prose max-w-screen-md mx-auto px-4">
 
+{# let screen reader users skip page heading #}
+<a href="#content" class="sr-only focus:not-sr-only">{{ 'Jump to content'|t }}</a>
+
 <header class="mb-8">
 
-    {% include '_layouts/partials/nav.twig' %}
+    {% include '_layouts/partials/nav.twig' with {
+        localizedEntries
+    } only %}
 
     {% block featured %}
-        {% if entry.featuredImage %}
+        {% if featuredImage %}
             {% include '_layouts/partials/featuredImage.twig' with {
-                query: entry.featuredImage
+                image: featuredImage
             } only %}
         {% endif %}
     {% endblock %}
 
 </header>
 
-<main class="mt-8">
+<main id="content" class="mt-8">
     {% block title %}
-        <h1 class="font-bold text-3xl">{{ entry.title }}</h1>
+        <h1 class="font-bold text-3xl">{{ title }}</h1>
     {% endblock %}
 
     {% block content %}

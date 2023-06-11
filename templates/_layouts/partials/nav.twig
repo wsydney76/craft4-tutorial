@@ -1,20 +1,26 @@
 {% cache %}
-    <nav class="border-b border-gray-400 py-4 flex justify-between items-center">
+
+    {% set navEntries = craft.entries.section('page').level(1).all %}
+
+    <nav class="border-b border-gray-400 py-4 md:flex md:justify-between md:items-center">
         <div>
             {# Do it this way so that preview tokens are added to the url. Won't happen with just {{ siteUrl }} #}
             {% set homePageEntry = craft.entries.section('home').one %}
             <a class="font-bold text-2xl" href="{{ homePageEntry.url }}">{{ siteInfo.siteName }}</a>
         </div>
 
-        <div class="space-x-6">
-            {% for navEntry in craft.entries.section('page').level(1).all %}
-                {% set attr = craft.app.request.segment(1) == navEntry.slug ? {class: 'underline'} : {} %}
-                {{ navEntry.link|attr(attr) }}
-            {% endfor %}
-
-            {% for localizedEntry in entry.localized.all %}
-                <a href="{{ localizedEntry.url }}">{{ localizedEntry.site.name }}</a>
-            {% endfor %}
+        <div class="hidden md:flex flex-wrap space-x-4">
+            {% include '_layouts/partials/nav-desktop.twig' with {
+                navEntries, localizedEntries
+            } only %}
         </div>
+
+
+        <div class="md:hidden">
+            {% include '_layouts/partials/nav-mobile.twig' with {
+                navEntries, localizedEntries
+            } only  %}
+        </div>
+
     </nav>
 {% endcache %}

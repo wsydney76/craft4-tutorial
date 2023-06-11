@@ -50,6 +50,6 @@ handle: images
 name: Images
 sortOrder: 1
 titleTranslationKeyFormat: null
-titleTranslationMethod: site
+titleTranslationMethod: language
 transformFs: internalFs
-transformSubpath: transforms/images
+transformSubpath: images

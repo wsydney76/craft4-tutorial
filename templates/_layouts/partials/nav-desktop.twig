@@ -1,0 +1,8 @@
+{% for navEntry in navEntries %}
+    {% set attr = craft.app.request.segment(1) == navEntry.slug ? {class: 'underline'} : {} %}
+    {{ navEntry.link|attr(attr) }}
+{% endfor %}
+
+{% for localizedEntry in localizedEntries %}
+    <a href="{{ localizedEntry.url }}">{{ localizedEntry.site.name }}</a>
+{% endfor %}

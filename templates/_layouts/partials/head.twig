@@ -1,0 +1,18 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>{{ title }} | {{ siteInfo.siteName }}</title>
+
+<link rel="canonical" href="{{ entry.url }}">
+
+{# https://developers.google.com/search/docs/specialty/international/localized-versions?hl=de#language-codes #}
+
+{% set localizedEntries = localizedEntries|unshift(entry) %}
+{% for localizedEntry in localizedEntries %}
+    <link rel="alternate" hreflang="{{ localizedEntry.site.language }}" href="{{ localizedEntry.url }}">
+{% endfor %}
+
+{# SEO things here, typically inserted by a plugin #}
+
+{# load assets #}
+<link href="{{ url('/assets/dist/app.css') }}" rel="stylesheet">

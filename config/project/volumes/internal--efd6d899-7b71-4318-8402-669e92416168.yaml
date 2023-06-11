@@ -47,7 +47,7 @@ fieldLayouts:
         userCondition: null
 fs: internalFs
 handle: internal
-name: Internal
+name: 'System Files'
 sortOrder: 2
 titleTranslationKeyFormat: null
 titleTranslationMethod: language

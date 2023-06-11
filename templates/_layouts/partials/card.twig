@@ -1,9 +1,15 @@
-<a href="{{ url }}" class="block border border-gray-300 bg-white hover:bg-gray-100 transition-colors shadow-md max-w-[300px]">
+{% from '_macros/lib.twig' import img %}
+
+<a href="{{ url }}" class="group block  border border-gray-300 bg-white hover:bg-gray-100 transition-colors shadow-md max-w-[400px]">
     {% if image %}
-        {% include '_partials/image.twig' with {
-            image,
-            transform: craft.app.config.custom.cardTransform
-        } only %}
+        <div class="overflow-hidden">
+            {{ img(image, {
+                transform: craft.app.config.custom.cardTransform,
+                attr: {
+                    class: 'group-hover:scale-105 transition'
+                }
+            }) }}
+        </div>
     {% endif %}
     <div class="p-4">
         {% block content %}{% endblock %}

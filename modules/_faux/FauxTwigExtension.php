@@ -43,6 +43,7 @@ class FauxTwigExtension extends AbstractExtension implements GlobalsInterface
 
             // Inserted by Craft CMS
             'entry' => new Entry(),
+            'siteInfo' => new Entry(),
 
             // Custom variables, templates should use these names by convention
 

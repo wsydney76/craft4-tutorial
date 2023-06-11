@@ -11,7 +11,10 @@
     {% embed '_layouts/partials/cards.twig' %}
         {% block content %}
             {% for entry in entries %}
-                {% embed '_layouts/partials/card.twig' with {image: entry.featuredImage.one, url: entry.url} %}
+                {% embed '_layouts/partials/card.twig' with {
+                    image: entry.featuredImage.one ?? siteInfo.featuredImage.one,
+                    url: entry.url
+                } %}
                     {% block content %}
                         <div class="font-semibold">{{ entry.title }}</div>
                         {% set block = entry.bodyContent.one %}

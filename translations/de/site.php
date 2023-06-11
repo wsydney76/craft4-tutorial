@@ -8,4 +8,5 @@ return [
     'Previous Page' => 'Vorherige Seite',
     '“' => '„',
     '”' => '“',
+    'Jump to content' => 'Springe zum Inhalt',
 ];

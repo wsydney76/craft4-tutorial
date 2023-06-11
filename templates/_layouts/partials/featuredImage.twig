@@ -1,11 +1,13 @@
-{% set image = query.one %}
+{% from '_macros/lib.twig' import img %}
 
 {% if image %}
     <div class="my-8">
 
-        {% include '_partials/image.twig' with {
-        	image
-        } only %}
+        {# Do not lazy load #}
+        {{ img(image, {
+            transform: {width: 840, height: 300},
+            attr: {loading: null, fetchpriority: 'high'}
+        }) }}
 
     </div>
 {% endif %}

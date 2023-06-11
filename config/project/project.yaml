@@ -1,9 +1,12 @@
 assets:
-  tempSubpath: temp
-  tempVolumeUid: efd6d899-7b71-4318-8402-669e92416168 # Internal
-dateModified: 1686482283
+  tempSubpath: temporary-uploads
+  tempVolumeUid: efd6d899-7b71-4318-8402-669e92416168 # System Files
+dateModified: 1686559890
 elementSources:
   craft\elements\Asset:
+    -
+      heading: Volumes
+      type: heading
     -
       defaultSort:
         - dateCreated
@@ -17,7 +20,17 @@ elementSources:
         - link
       type: native
     -
-      key: 'volume:efd6d899-7b71-4318-8402-669e92416168' # Internal
+      defaultSort:
+        - dateCreated
+        - desc
+      disabled: false
+      key: 'volume:efd6d899-7b71-4318-8402-669e92416168' # System Files
+      tableAttributes:
+        - filename
+        - kind
+        - imageSize
+        - size
+        - dateModified
       type: native
     -
       heading: Work
@@ -168,7 +181,7 @@ meta:
     bbbea387-f8a6-43f7-ab94-dc572bd0cc77: Site # Site
     c9a4fbad-6ca0-4e20-ba72-da2c14a38190: Images # Images
     eb230d0c-f88a-40de-a743-994de14eb8f8: Style # Style
-    efd6d899-7b71-4318-8402-669e92416168: Internal # Internal
+    efd6d899-7b71-4318-8402-669e92416168: 'System Files' # System Files
 system:
   edition: solo
   live: true
@@ -181,5 +194,5 @@ users:
   deactivateByDefault: false
   defaultGroup: null
   photoSubpath: userphotos
-  photoVolumeUid: efd6d899-7b71-4318-8402-669e92416168 # Internal
+  photoVolumeUid: efd6d899-7b71-4318-8402-669e92416168 # System Files
   requireEmailVerification: true

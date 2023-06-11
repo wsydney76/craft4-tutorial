@@ -1,0 +1,24 @@
+{# Inspired by https://dev.to/ljcdev/hamburger-css-no-js-2dfa #}
+
+{# TODO: Check for accessibility, included here for demo purposes only #}
+
+<ul class="absolute top-0 left-0 z-50  hidden target:flex flex-col flex-nowrap space-y-4 items-center -translate-y-full target:translate-y-0 transition w-full py-6 bg-gray-500 text-white"
+    id="mobile-navbar">
+    
+    <li class="text-xl font-semibold pb-4">{{ siteInfo.siteName }}</li>
+
+    {% for navEntry in navEntries %}
+        <li>{{ navEntry.link }}</li>
+    {% endfor %}
+
+    {% for localizedEntry in localizedEntries %}
+        <li><a href="{{ localizedEntry.url }}">{{ localizedEntry.site.name }}</a></li>
+    {% endfor %}
+
+    <a class="cursor-pointer absolute top-0 right-5 bg-gray-500" href="#">
+        {% include '_icons/close.svg' %}
+    </a>
+</ul>
+<a class="md:hidden cursor-pointer absolute top-5 right-5" href="#mobile-navbar">
+    {% include '_icons/menu.svg' %}
+</a>

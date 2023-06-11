@@ -1,12 +1,14 @@
+{% from '_macros/lib.twig' import img %}
+
 {% set image = block.image.one %}
 
 {% if image %}
     <figure>
-        {% include '_partials/image.twig' with {
-        	image,
-            transform: {width: 748, height: 450, format: 'webp'}
-        } only %}
-        
+
+        {{ img(image, {
+            transform: {width: 748, height: 450}
+        }) }}
+
         {% if block.caption %}
             <figcaption>
                 {{ block.caption }}

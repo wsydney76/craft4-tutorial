@@ -58,7 +58,7 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: image
-    instructions: null
+    instructions: 'At least 768px wide'
     name: Image
     searchable: true
     settings:
@@ -111,7 +111,7 @@ fields:
                   -
                     - maxValue
                     - ''
-      selectionLabel: null
+      selectionLabel: 'Select an image'
       showSiteMenu: false
       showUnpermittedFiles: false
       showUnpermittedVolumes: false

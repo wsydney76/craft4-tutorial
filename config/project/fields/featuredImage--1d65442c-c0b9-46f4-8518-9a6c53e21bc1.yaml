@@ -2,7 +2,7 @@ columnSuffix: null
 contentColumnType: string
 fieldGroup: 761cddc2-d969-4560-b5de-4bf2a393cb8a # Common
 handle: featuredImage
-instructions: null
+instructions: 'At least 768px wide'
 name: 'Featured Image'
 searchable: false
 settings:
@@ -55,7 +55,7 @@ settings:
               -
                 - maxValue
                 - ''
-  selectionLabel: 'Select a photo'
+  selectionLabel: 'Select an image'
   showSiteMenu: false
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
