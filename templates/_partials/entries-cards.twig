@@ -1,0 +1,34 @@
+{% set query = query
+    .with([
+        ['featuredImage', {withTransforms: [craft.app.config.custom.cardTransform]}],
+        ['bodyContent', {type: 'text', limit: 1}]
+    ]) %}
+
+{% paginate query.limit(craft.app.config.custom.cardsPerPage) as pageInfo, entries %}
+
+{% if entries %}
+
+    {% embed '_layouts/partials/cards.twig' %}
+        {% block content %}
+            {% for entry in entries %}
+                {% embed '_layouts/partials/card.twig' with {image: entry.featuredImage.one, url: entry.url} %}
+                    {% block content %}
+                        <div class="font-semibold">{{ entry.title }}</div>
+                        {% set block = entry.bodyContent.one %}
+                        {% if block %}
+                            <div class="mt-2">
+                                {{ block.text|md|striptags|truncate(80) }}
+                            </div>
+                        {% endif %}
+                    {% endblock %}
+                {% endembed %}
+            {% endfor %}
+        {% endblock %}
+    {% endembed %}
+
+
+    {% include '_layouts/partials/pagination.twig' with {
+    	pageInfo
+    } only %}
+
+{% endif %}

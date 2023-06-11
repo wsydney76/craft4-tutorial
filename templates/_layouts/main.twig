@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="{{ craft.app.language }}" style="overflow-y: scroll">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{ entry.title }} | {{ siteInfo.siteName }}</title>
+    <link href="{{ url('/assets/dist/app.css') }}" rel="stylesheet">
+
+    {# SEO things here, typically inserted by a plugin #}
+
+</head>
+
+<body class="bg-gray-50 text-prose max-w-screen-md mx-auto px-4">
+
+<header class="mb-8">
+
+    {% include '_layouts/partials/nav.twig' %}
+
+    {% block featured %}
+        {% if entry.featuredImage %}
+            {% include '_layouts/partials/featuredImage.twig' with {
+                query: entry.featuredImage
+            } only %}
+        {% endif %}
+    {% endblock %}
+
+</header>
+
+<main class="mt-8">
+    {% block title %}
+        <h1 class="font-bold text-3xl">{{ entry.title }}</h1>
+    {% endblock %}
+
+    {% block content %}
+        {% if entry.bodyContent %}
+            {% include '_partials/blocks.twig' with {
+            	query: entry.bodyContent
+            } only %}
+        {% endif %}
+    {% endblock %}
+</main>
+
+<footer class="mt-8 border-t border-gray-400 py-4 flex justify-between">
+    <div>
+        &copy; {{ now|date('Y') }} {{ siteInfo.copyright }}
+    </div>
+    <div>
+        <a class="text-sm text-gray-500" href="{{ entry.cpEditUrl }}">{{ 'Edit'|t }}</a>
+    </div>
+</footer>
+
+</body>
+</html>

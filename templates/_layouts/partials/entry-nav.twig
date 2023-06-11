@@ -1,0 +1,14 @@
+<nav class="mt-12 flex justify-between">
+    <div>
+        {% set prev = entry.prev(condition) %}
+        {% if prev %}
+            &lt; {{ prev.link }}
+        {% endif %}
+    </div>
+    <div class="text-right">
+        {% set next = entry.next(condition) %}
+        {% if next %}
+            {{ next.link }} &gt;
+        {% endif %}
+    </div>
+</nav>

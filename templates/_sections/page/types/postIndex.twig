@@ -1,0 +1,10 @@
+{% extends "_layouts/main.twig" %}
+
+{% block content %}
+
+    {{ parent() }}
+    
+    {% include '_partials/entries-cards.twig' with {
+        query: craft.entries.section('post')
+    } only %}
+{% endblock %}

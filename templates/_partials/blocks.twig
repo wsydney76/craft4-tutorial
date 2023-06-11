@@ -1,0 +1,11 @@
+{% set blocks = query.all %}
+
+{% if blocks %}
+    <div class="my-8 prose prose-lg prose-slate max-w-none">
+        {% for block in blocks %}
+            {% include "_blocks/#{block.type.handle}.twig" with {
+            	block
+            } only  %}
+        {% endfor %}
+    </div>
+{% endif %}

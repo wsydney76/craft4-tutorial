@@ -1,0 +1,11 @@
+<a href="{{ url }}" class="block border border-gray-300 bg-white hover:bg-gray-100 transition-colors shadow-md max-w-[300px]">
+    {% if image %}
+        {% include '_partials/image.twig' with {
+            image,
+            transform: craft.app.config.custom.cardTransform
+        } only %}
+    {% endif %}
+    <div class="p-4">
+        {% block content %}{% endblock %}
+    </div>
+</a>

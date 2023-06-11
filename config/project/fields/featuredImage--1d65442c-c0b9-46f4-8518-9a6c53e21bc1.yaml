@@ -1,0 +1,69 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 761cddc2-d969-4560-b5de-4bf2a393cb8a # Common
+handle: featuredImage
+instructions: null
+name: 'Featured Image'
+searchable: false
+settings:
+  allowSelfRelations: false
+  allowSubfolders: false
+  allowUploads: true
+  allowedKinds:
+    - image
+  branchLimit: null
+  defaultUploadLocationSource: 'volume:c9a4fbad-6ca0-4e20-ba72-da2c14a38190' # Images
+  defaultUploadLocationSubpath: featured
+  localizeRelations: false
+  maintainHierarchy: false
+  maxRelations: 1
+  minRelations: null
+  previewMode: thumbs
+  restrictFiles: true
+  restrictLocation: false
+  restrictedDefaultUploadSubpath: null
+  restrictedLocationSource: 'volume:c9a4fbad-6ca0-4e20-ba72-da2c14a38190' # Images
+  restrictedLocationSubpath: null
+  selectionCondition:
+    __assoc__:
+      -
+        - elementType
+        - craft\elements\Asset
+      -
+        - fieldContext
+        - global
+      -
+        - class
+        - craft\elements\conditions\assets\AssetCondition
+      -
+        - conditionRules
+        -
+          -
+            __assoc__:
+              -
+                - class
+                - craft\elements\conditions\assets\WidthConditionRule
+              -
+                - uid
+                - 226805ac-3aea-4362-8bdc-7ddd00eab414
+              -
+                - operator
+                - '>='
+              -
+                - value
+                - '768'
+              -
+                - maxValue
+                - ''
+  selectionLabel: 'Select a photo'
+  showSiteMenu: false
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  sources:
+    - 'volume:c9a4fbad-6ca0-4e20-ba72-da2c14a38190' # Images
+  targetSiteId: null
+  validateRelatedElements: true
+  viewMode: large
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

@@ -1,0 +1,20 @@
+defaultPlacement: end
+enableVersioning: true
+handle: page
+name: Page
+propagationMethod: all
+siteSettings:
+  2393c71c-94e8-4e90-bb19-949696b8be0b: # English
+    enabledByDefault: true
+    hasUrls: true
+    template: _sections/page
+    uriFormat: '{parent.uri}/{slug}'
+  b7acd2cf-9449-4637-a40c-2e266a19cc19: # Deutsch
+    enabledByDefault: true
+    hasUrls: true
+    template: _sections/page
+    uriFormat: '{parent.uri}/{slug}'
+structure:
+  maxLevels: null
+  uid: a60ce745-c40e-446a-bf07-59109de5651d
+type: structure

@@ -1,0 +1,11 @@
+{% set image = query.one %}
+
+{% if image %}
+    <div class="my-8">
+
+        {% include '_partials/image.twig' with {
+        	image
+        } only %}
+
+    </div>
+{% endif %}

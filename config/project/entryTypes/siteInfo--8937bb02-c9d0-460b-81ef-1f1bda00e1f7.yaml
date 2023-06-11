@@ -1,0 +1,67 @@
+fieldLayouts:
+  bde6c865-48ee-4415-9ac7-2ef82c0b9b2f:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 3bd488e7-e259-495d-94c6-7c255835294b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 0837f34c-eb77-4cca-bded-4b9c2d688a90 # Site Name
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b371723f-8ccc-4454-b211-37d094110d75
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 560e7c36-f763-440f-b9b5-1d87228bc6df # Copyright
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6e118f46-8419-4f4a-894a-ceeec190f3bc
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 44927ccf-a678-414e-bd93-d96a5fd71966
+        userCondition: null
+handle: siteInfo
+hasTitleField: false
+name: 'Site Info - Global Settings'
+section: a7f4b9fd-a554-4545-af32-3b57544c9432 # Site Info - Global Settings
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

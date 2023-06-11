@@ -1,0 +1,23 @@
+{% extends "_layouts/main.twig" %}
+
+{% block content %}
+
+    {% embed '_layouts/partials/box.twig' %}
+        {% block content %}
+            {{ 'Published on {date} by {name}'|t({
+                date: entry.postDate|date('short'),
+                name: entry.author.name
+            }) }}
+        {% endblock %}
+    {% endembed %}
+
+    
+    {{ parent() }}
+
+    {% include '_layouts/partials/entry-nav.twig' with {
+        entry,
+    	condition: {section: 'post', orderBy: 'postDate desc'}
+    } only %}
+
+
+{% endblock %}

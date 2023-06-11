@@ -1,0 +1,125 @@
+field: 95f98672-9562-44a0-8639-92d2b55ceeb6 # Body Content
+fieldLayouts:
+  0a8eb920-774e-4467-b009-325d6a5b47a6:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 63e734ee-d709-488a-bd8d-3a90ab070825 # Text
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d6458e2f-6659-428f-bfed-105b9d672eea
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 1eac01fa-9e12-426e-a043-60ae35acf391 # Cite
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 44761774-ed94-4a0a-8278-6ea13d3b3d48
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: eb230d0c-f88a-40de-a743-994de14eb8f8 # Style
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 867dfbcf-588a-435f-8dbd-b31e4d4a9347
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 756bc6cb-dc8c-4411-a1ce-c980d292105f
+        userCondition: null
+fields:
+  1eac01fa-9e12-426e-a043-60ae35acf391: # Cite
+    columnSuffix: ljffsgdr
+    contentColumnType: string(240)
+    fieldGroup: null
+    handle: cite
+    instructions: null
+    name: Cite
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: 60
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: language
+    type: craft\fields\PlainText
+  63e734ee-d709-488a-bd8d-3a90ab070825: # Text
+    columnSuffix: yfidlzze
+    contentColumnType: text
+    fieldGroup: null
+    handle: text
+    instructions: null
+    name: Text
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 1
+      multiline: true
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: language
+    type: craft\fields\PlainText
+  eb230d0c-f88a-40de-a743-994de14eb8f8: # Style
+    columnSuffix: vdcfeeit
+    contentColumnType: string
+    fieldGroup: null
+    handle: style
+    instructions: null
+    name: Style
+    searchable: false
+    settings:
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Default
+            -
+              - value
+              - default
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - 'Borders Top Bottom'
+            -
+              - value
+              - bordersTopBottom
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: quote
+name: Quote
+sortOrder: 4

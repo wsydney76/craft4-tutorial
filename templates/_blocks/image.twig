@@ -1,0 +1,16 @@
+{% set image = block.image.one %}
+
+{% if image %}
+    <figure>
+        {% include '_partials/image.twig' with {
+        	image,
+            transform: {width: 748, height: 450, format: 'webp'}
+        } only %}
+        
+        {% if block.caption %}
+            <figcaption>
+                {{ block.caption }}
+            </figcaption>
+        {% endif %}
+    </figure>
+{% endif %}

@@ -1,0 +1,185 @@
+assets:
+  tempSubpath: temp
+  tempVolumeUid: efd6d899-7b71-4318-8402-669e92416168 # Internal
+dateModified: 1686482283
+elementSources:
+  craft\elements\Asset:
+    -
+      defaultSort:
+        - dateCreated
+        - desc
+      disabled: false
+      key: 'volume:c9a4fbad-6ca0-4e20-ba72-da2c14a38190' # Images
+      tableAttributes:
+        - imageSize
+        - 'field:a73e7c96-e9d2-4751-bf01-8a6baf5f3c46' # Alt Text
+        - dateModified
+        - link
+      type: native
+    -
+      key: 'volume:efd6d899-7b71-4318-8402-669e92416168' # Internal
+      type: native
+    -
+      heading: Work
+      type: heading
+    -
+      condition:
+        class: craft\elements\conditions\assets\AssetCondition
+        conditionRules:
+          -
+            class: craft\fields\conditions\TextFieldConditionRule
+            fieldUid: a73e7c96-e9d2-4751-bf01-8a6baf5f3c46 # Alt Text
+            operator: empty
+            uid: 3c30e8ff-c879-49ed-a325-235c9a221596
+            value: ''
+          -
+            class: craft\elements\conditions\assets\VolumeConditionRule
+            operator: in
+            uid: f80300e6-e686-4b27-afb3-d9827b4a3732
+            values:
+              - c9a4fbad-6ca0-4e20-ba72-da2c14a38190 # Images
+        elementType: craft\elements\Asset
+        fieldContext: global
+      defaultSort:
+        - title
+        - asc
+      key: 'custom:b27f0d6e-cf07-4a3e-b45e-7f9fe4494f87'
+      label: 'Missing alt text'
+      tableAttributes:
+        - imageSize
+        - location
+      type: custom
+  craft\elements\Entry:
+    -
+      defaultSort:
+        - postDate
+        - desc
+      disabled: false
+      key: '*'
+      tableAttributes:
+        - section
+        - postDate
+        - expiryDate
+        - link
+      type: native
+    -
+      heading: Site
+      type: heading
+    -
+      defaultSort:
+        - title
+        - asc
+      disabled: false
+      key: singles
+      tableAttributes:
+        - section
+        - 'field:1d65442c-c0b9-46f4-8518-9a6c53e21bc1' # Featured Image
+        - link
+      type: native
+    -
+      heading: Content
+      type: heading
+    -
+      defaultSort:
+        - postDate
+        - desc
+      disabled: false
+      key: 'section:5f021491-7c29-4320-be70-454d594268af' # Page
+      tableAttributes:
+        - type
+        - 'field:1d65442c-c0b9-46f4-8518-9a6c53e21bc1' # Featured Image
+        - drafts
+        - postDate
+        - link
+      type: native
+    -
+      defaultSort:
+        - postDate
+        - desc
+      disabled: false
+      key: 'section:585f70b2-f84a-47ff-ad71-3faff9698ba9' # Post
+      tableAttributes:
+        - 'field:1d65442c-c0b9-46f4-8518-9a6c53e21bc1' # Featured Image
+        - drafts
+        - postDate
+        - link
+      type: native
+email:
+  fromEmail: admin@example.com
+  fromName: 'Craft 4 Blank'
+  replyToEmail: null
+  template: null
+  transportSettings:
+    host: $MAILHOG_SMTP_HOSTNAME
+    password: ''
+    port: $MAILHOG_SMTP_PORT
+    useAuthentication: '0'
+    username: ''
+  transportType: craft\mail\transportadapters\Smtp
+fs:
+  imagesFs:
+    hasUrls: true
+    name: 'Images FS'
+    settings:
+      path: '@webroot/images'
+    type: craft\fs\Local
+    url: '@web/images'
+  internalFs:
+    hasUrls: true
+    name: 'Internal FS'
+    settings:
+      path: '@webroot/files'
+    type: craft\fs\Local
+    url: '@web/files'
+meta:
+  __names__:
+    0e989e8d-658a-4a1e-acf5-edb2387959ab: 'Post Index' # Post Index
+    1d65442c-c0b9-46f4-8518-9a6c53e21bc1: 'Featured Image' # Featured Image
+    1eac01fa-9e12-426e-a043-60ae35acf391: Cite # Cite
+    2be01897-dbaf-4c19-a6d9-db80ada8fc8f: 'Public Schema' # Public Schema
+    4b9eed77-fa62-4ecc-9486-744a64f075d4: Caption # Caption
+    5c400efe-2716-4221-a54a-4ebaf6a3c6cb: 'Heading Level' # Heading Level
+    5f021491-7c29-4320-be70-454d594268af: Page # Page
+    18e8e721-36cd-4c7a-a02a-44c513fb3cb8: Default # Default
+    19a49103-3b3e-48c0-955b-996599d8c651: Default # Default
+    19d8011f-2129-4d06-b597-49d7125063c7: Quote # Quote
+    21e8b35e-5b6d-4f11-bc0e-26fcaa107ce8: Home # Home
+    32d347b0-ea6e-469f-92f8-d59f3fd496c7: 'Public Schema' # Public Schema
+    63e734ee-d709-488a-bd8d-3a90ab070825: Text # Text
+    78ba6fca-0979-4552-a36e-f6f7a001b0f5: Text # Text
+    78f9590c-8302-4bbc-8e62-39e3f6a2bd57: Text # Text
+    95f98672-9562-44a0-8639-92d2b55ceeb6: 'Body Content' # Body Content
+    560e7c36-f763-440f-b9b5-1d87228bc6df: Copyright # Copyright
+    585f70b2-f84a-47ff-ad71-3faff9698ba9: Post # Post
+    761cddc2-d969-4560-b5de-4bf2a393cb8a: Common # Common
+    817d3d1a-d840-41a0-85a2-898d07aef769: Default # Default
+    0837f34c-eb77-4cca-bded-4b9c2d688a90: 'Site Name' # Site Name
+    2393c71c-94e8-4e90-bb19-949696b8be0b: English # English
+    8937bb02-c9d0-460b-81ef-1f1bda00e1f7: 'Site Info - Global Settings' # Site Info - Global Settings
+    9013e485-c018-45be-825d-d7223ee50703: 'Public Schema' # Public Schema
+    a4a0dfdc-289d-4d50-baae-6a3215a85701: Text # Text
+    a7f4b9fd-a554-4545-af32-3b57544c9432: 'Site Info - Global Settings' # Site Info - Global Settings
+    a73e7c96-e9d2-4751-bf01-8a6baf5f3c46: 'Alt Text' # Alt Text
+    a33610ee-ece8-47a1-949e-94477da5fd4d: Image # Image
+    a3605555-7165-4ea9-a338-870db2eba7ca: Heading # Heading
+    ab2052c5-b53a-4cbd-b95d-96ea7489c375: Home # Home
+    abb455ba-032b-461d-9c8d-dca9ed3fc7bd: Image # Image
+    b7acd2cf-9449-4637-a40c-2e266a19cc19: Deutsch # Deutsch
+    bbbea387-f8a6-43f7-ab94-dc572bd0cc77: Site # Site
+    c9a4fbad-6ca0-4e20-ba72-da2c14a38190: Images # Images
+    eb230d0c-f88a-40de-a743-994de14eb8f8: Style # Style
+    efd6d899-7b71-4318-8402-669e92416168: Internal # Internal
+system:
+  edition: solo
+  live: true
+  name: $SYSTEM_NAME
+  retryDuration: null
+  schemaVersion: 4.4.0.4
+  timeZone: Europe/Berlin
+users:
+  allowPublicRegistration: false
+  deactivateByDefault: false
+  defaultGroup: null
+  photoSubpath: userphotos
+  photoVolumeUid: efd6d899-7b71-4318-8402-669e92416168 # Internal
+  requireEmailVerification: true

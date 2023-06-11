@@ -1,0 +1,10 @@
+{% if pageInfo.totalPages > 1 %}
+    <nav class="mt-12 flex justify-between">
+        <div>
+            {% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}">&lt; {{ 'Previous Page'|t }}</a>{% endif %}
+        </div>
+        <div class="text-right">
+            {% if pageInfo.nextUrl %}<a href="{{ pageInfo.nextUrl }}">{{ 'Next Page'|t }} &gt;</a>{% endif %}
+        </div>
+    </nav>
+{% endif %}

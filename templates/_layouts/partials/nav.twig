@@ -1,0 +1,20 @@
+{% cache %}
+    <nav class="border-b border-gray-400 py-4 flex justify-between items-center">
+        <div>
+            {# Do it this way so that preview tokens are added to the url. Won't happen with just {{ siteUrl }} #}
+            {% set homePageEntry = craft.entries.section('home').one %}
+            <a class="font-bold text-2xl" href="{{ homePageEntry.url }}">{{ siteInfo.siteName }}</a>
+        </div>
+
+        <div class="space-x-6">
+            {% for navEntry in craft.entries.section('page').level(1).all %}
+                {% set attr = craft.app.request.segment(1) == navEntry.slug ? {class: 'underline'} : {} %}
+                {{ navEntry.link|attr(attr) }}
+            {% endfor %}
+
+            {% for localizedEntry in entry.localized.all %}
+                <a href="{{ localizedEntry.url }}">{{ localizedEntry.site.name }}</a>
+            {% endfor %}
+        </div>
+    </nav>
+{% endcache %}

@@ -1,0 +1,93 @@
+field: 95f98672-9562-44a0-8639-92d2b55ceeb6 # Body Content
+fieldLayouts:
+  41e5d65a-c578-41e0-8470-21b000104054:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: a4a0dfdc-289d-4d50-baae-6a3215a85701 # Text
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f4e83568-6458-4bf3-9b47-b1359fa7dd54
+            userCondition: null
+            warning: null
+            width: 75
+          -
+            elementCondition: null
+            fieldUid: 5c400efe-2716-4221-a54a-4ebaf6a3c6cb # Heading Level
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fdcd6c78-b61f-4ad7-80cc-58b9e85b6e96
+            userCondition: null
+            warning: null
+            width: 25
+        name: Content
+        uid: 7d31a66e-6de9-46b8-8336-1205bfe7bb56
+        userCondition: null
+fields:
+  5c400efe-2716-4221-a54a-4ebaf6a3c6cb: # Heading Level
+    columnSuffix: xiqfbbjz
+    contentColumnType: string
+    fieldGroup: null
+    handle: headingLevel
+    instructions: null
+    name: 'Heading Level'
+    searchable: false
+    settings:
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - H2
+            -
+              - value
+              - h2
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - H3
+            -
+              - value
+              - h3
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  a4a0dfdc-289d-4d50-baae-6a3215a85701: # Text
+    columnSuffix: ehszctzg
+    contentColumnType: string(240)
+    fieldGroup: null
+    handle: text
+    instructions: null
+    name: Text
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: 60
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: language
+    type: craft\fields\PlainText
+handle: heading
+name: Heading
+sortOrder: 1

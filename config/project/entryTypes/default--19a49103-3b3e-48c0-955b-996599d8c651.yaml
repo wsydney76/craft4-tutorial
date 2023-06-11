@@ -1,0 +1,67 @@
+fieldLayouts:
+  066117b4-ac70-4bb1-b6c2-b892f40a2428:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 49fe3231-3a75-4fe7-a00e-79142a90f462
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 1d65442c-c0b9-46f4-8518-9a6c53e21bc1 # Featured Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 512724a6-2819-4625-a4d7-a9d4c0ad58b7
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 95f98672-9562-44a0-8639-92d2b55ceeb6 # Body Content
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8707ff65-f32e-4002-852f-783d9891a7d6
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: b120c952-7949-4f74-8505-d61aae23d0b2
+        userCondition: null
+handle: default
+hasTitleField: true
+name: Default
+section: 5f021491-7c29-4320-be70-454d594268af # Page
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: none

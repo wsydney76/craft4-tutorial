@@ -1,0 +1,21 @@
+<section class="mt-8 prose">
+
+    {% set entries = query.all %}
+
+
+    {% if entries %}
+
+        {% if heading is defined %}
+            <h2>{{ heading }}</h2>
+        {% endif %}
+
+        <ul>
+            {% for entry in entries %}
+                <li>{{ entry.link }}</li>
+            {% endfor %}
+        </ul>
+
+
+    {% endif %}
+
+</section>
