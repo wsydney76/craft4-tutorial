@@ -70,15 +70,15 @@ fields:
     type: craft\fields\Dropdown
   a4a0dfdc-289d-4d50-baae-6a3215a85701: # Text
     columnSuffix: ehszctzg
-    contentColumnType: string(240)
+    contentColumnType: string(250)
     fieldGroup: null
     handle: text
     instructions: null
     name: Text
     searchable: true
     settings:
-      byteLimit: null
-      charLimit: 60
+      byteLimit: 250
+      charLimit: null
       code: false
       columnType: null
       initialRows: 4

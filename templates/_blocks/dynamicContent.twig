@@ -1,0 +1,33 @@
+{% switch block.blockType.value %}
+
+{% case "tableOfContents" %}
+    
+    {% set classes = {
+        h2: 'font-semibold',
+        h3: 'pl-8'
+    } %}
+
+    <nav class="bg-white p-4 border border-gray-300 not-prose">
+        <div class="font-semibold text-xl">
+            {{ 'Table of Content'|t }}
+        </div>
+        <ul class="mt-4">
+            {% for headingBlock in blocks|filter(b => b.type.handle == 'heading') %}
+            	<li>
+                    <a class="{{ classes[headingBlock.headingLevel.value] }} hover:underline" href="#{{ headingBlock.text|id }}">{{ headingBlock.text }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+
+{% case "aiWarning" %}
+
+    <div class="font-bold">
+        {{ 'msg_aiWarning'|t }}
+    </div>
+
+{% default %}
+
+    {# optional default content #}
+
+{% endswitch %}

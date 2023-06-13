@@ -1,7 +1,7 @@
 assets:
   tempSubpath: temporary-uploads
   tempVolumeUid: efd6d899-7b71-4318-8402-669e92416168 # System Files
-dateModified: 1686648278
+dateModified: 1686665096
 elementSources:
   craft\elements\Asset:
     -
@@ -192,6 +192,8 @@ meta:
     2393c71c-94e8-4e90-bb19-949696b8be0b: English # English
     8937bb02-c9d0-460b-81ef-1f1bda00e1f7: 'Site Info - Global Settings' # Site Info - Global Settings
     9013e485-c018-45be-825d-d7223ee50703: 'Public Schema' # Public Schema
+    9128a883-c73e-4009-b8d5-7971ce954682: 'Dynamic Content' # Dynamic Content
+    10877b5b-ab25-4e80-b0c0-74947be617eb: 'Block Type' # Block Type
     a4a0dfdc-289d-4d50-baae-6a3215a85701: Text # Text
     a7f4b9fd-a554-4545-af32-3b57544c9432: 'Site Info - Global Settings' # Site Info - Global Settings
     a73e7c96-e9d2-4751-bf01-8a6baf5f3c46: 'Alt Text' # Alt Text

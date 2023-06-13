@@ -1,1 +1,4 @@
-{{ tag(block.headingLevel.value, {text: block.text}) }}
+{{ tag(block.headingLevel.value, {
+    id: block.text|id,
+    text: block.text
+}) }}

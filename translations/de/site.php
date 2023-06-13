@@ -9,4 +9,7 @@ return [
     '“' => '„',
     '”' => '“',
     'Jump to content' => 'Springe zum Inhalt',
+    'Photo' => 'Foto',
+    'msg_aiWarning' => 'Dieser Text ist KI-generiert und übersetzt. Vielleicht korrekt, vielleicht auch nicht.',
+    'Table of Content' => 'Inhaltsverzeichnis',
 ];

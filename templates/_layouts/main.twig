@@ -9,7 +9,7 @@
     {% set featuredImage = featuredImage ?? entry.featuredImage.one ?? siteInfo.featuredImage.one %}
 {% endapply %}
 <!DOCTYPE html>
-<html lang="{{ craft.app.language }}" style="overflow-y: scroll">
+<html lang="{{ craft.app.language }}" style="overflow-y: scroll;">
 <head>
     {% include '_layouts/partials/head.twig' with {
     	entry,

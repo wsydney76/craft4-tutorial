@@ -1,0 +1,61 @@
+field: 95f98672-9562-44a0-8639-92d2b55ceeb6 # Body Content
+fieldLayouts:
+  52cbbbdd-23eb-4d2e-99d7-a5e658741953:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 10877b5b-ab25-4e80-b0c0-74947be617eb # Block Type
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d2e86102-96f7-4c35-a692-cb5f9260dfc3
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 7582ba6c-35b5-4d8a-a1c7-65a7f77174fb
+        userCondition: null
+fields:
+  10877b5b-ab25-4e80-b0c0-74947be617eb: # Block Type
+    columnSuffix: wekoroov
+    contentColumnType: string
+    fieldGroup: null
+    handle: blockType
+    instructions: null
+    name: 'Block Type'
+    searchable: false
+    settings:
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 'Table of Contents'
+            -
+              - value
+              - tableOfContents
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - 'AI Warning'
+            -
+              - value
+              - aiWarning
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: dynamicContent
+name: 'Dynamic Content'
+sortOrder: 5

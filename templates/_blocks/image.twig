@@ -14,9 +14,9 @@
             <figcaption class="flex justify-between">
                 <div>
                     {{ block.caption }}
-                </div>>
+                </div>
                 {% if image.copyright %}
-                    <div class="text-sm text-gray-500">({{ 'Photo'|t }} {{ image.copyright }})</div>
+                    <div class="text-sm text-gray-500">({{ 'Photo'|t }}: {{ image.copyright }})</div>
                 {% endif %}
             </figcaption>
         {% endif %}
