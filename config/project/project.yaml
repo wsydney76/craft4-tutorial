@@ -1,7 +1,7 @@
 assets:
   tempSubpath: temporary-uploads
   tempVolumeUid: efd6d899-7b71-4318-8402-669e92416168 # System Files
-dateModified: 1686559890
+dateModified: 1686648278
 elementSources:
   craft\elements\Asset:
     -
@@ -59,6 +59,28 @@ elementSources:
       key: 'custom:b27f0d6e-cf07-4a3e-b45e-7f9fe4494f87'
       label: 'Missing alt text'
       tableAttributes:
+        - imageSize
+        - location
+      type: custom
+    -
+      condition:
+        class: craft\elements\conditions\assets\AssetCondition
+        conditionRules:
+          -
+            class: craft\fields\conditions\TextFieldConditionRule
+            fieldUid: 560e7c36-f763-440f-b9b5-1d87228bc6df # Copyright
+            operator: empty
+            uid: 4ba2301e-60c6-4520-8136-f56e1896da40
+            value: ''
+        elementType: craft\elements\Asset
+        fieldContext: global
+      defaultSort:
+        - title
+        - asc
+      key: 'custom:f0e81598-0477-447a-b0cd-7adb621ad4c3'
+      label: 'Missing copyright'
+      tableAttributes:
+        - 'field:a73e7c96-e9d2-4751-bf01-8a6baf5f3c46' # Alt Text
         - imageSize
         - location
       type: custom

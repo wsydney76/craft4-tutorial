@@ -1,10 +1,5 @@
 {% extends "_layouts/main.twig" %}
 
-{% set latestPost = craft.entries.section('post').one %}
-{% if latestPost %}
-    {% set featuredImage = latestPost.featuredImage.one %}
-{% endif %}
-
 {% block title %}{% endblock %}
 
 {% block content %}

@@ -31,30 +31,6 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            elementCondition: null
-            fieldUid: 1d65442c-c0b9-46f4-8518-9a6c53e21bc1 # Featured Image
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 97b747f6-bfd0-4219-8bc2-64570fc4d663
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: 95f98672-9562-44a0-8639-92d2b55ceeb6 # Body Content
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 4fd830e8-1079-4963-9692-82ad90a3b249
-            userCondition: null
-            warning: null
-            width: 100
-          -
             dismissible: true
             elementCondition: null
             style: tip
@@ -72,4 +48,4 @@ section: 5f021491-7c29-4320-be70-454d594268af # Page
 sortOrder: 3
 titleFormat: null
 titleTranslationKeyFormat: null
-titleTranslationMethod: site
+titleTranslationMethod: language

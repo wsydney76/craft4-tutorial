@@ -1,13 +1,19 @@
 {% from '_macros/lib.twig' import img %}
 
 {% if image %}
-    <div class="my-8">
+    <figure class="my-8 relative">
 
         {# Do not lazy load #}
         {{ img(image, {
             transform: {width: 840, height: 300},
             attr: {loading: null, fetchpriority: 'high'}
         }) }}
+        
+        {% if image.copyright %}
+            <figcaption class="absolute bottom-0 right-0 px-2 py-1 bg-black/50 text-white text-sm">
+                {{ 'Photo'|t }} {{ image.copyright }}
+            </figcaption>
+        {% endif %}
 
-    </div>
+    </figure>
 {% endif %}

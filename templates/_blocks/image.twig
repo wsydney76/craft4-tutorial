@@ -3,15 +3,21 @@
 {% set image = block.image.one %}
 
 {% if image %}
-    <figure>
+    <figure class="relative">
 
         {{ img(image, {
-            transform: {width: 748, height: 450}
+            transform: {width: 840, height: 450}
         }) }}
 
-        {% if block.caption %}
-            <figcaption>
-                {{ block.caption }}
+
+        {% if block.caption or image.copyright %}
+            <figcaption class="flex justify-between">
+                <div>
+                    {{ block.caption }}
+                </div>>
+                {% if image.copyright %}
+                    <div class="text-sm text-gray-500">({{ 'Photo'|t }} {{ image.copyright }})</div>
+                {% endif %}
             </figcaption>
         {% endif %}
     </figure>

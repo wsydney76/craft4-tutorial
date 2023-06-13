@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ddev craft db/backup setup/seed.sql --overwrite=1

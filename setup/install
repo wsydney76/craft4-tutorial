@@ -10,9 +10,9 @@ echo Installing project $1...
 
 ddev config --project-name=$1
 ddev start &&
-ddev composer install --no-dev &&
-ddev craft install --interactive=0 --username=admin --password=password --email=admin@example.com &&
-ddev craft migrate/up --interactive=0 &&
+ddev composer install &&
+ddev craft db/restore setup/seed.sql --interactive=0 &&
+ddev craft setup/keys &&
 ddev npm install &&
 ddev describe &&
 ddev launch
