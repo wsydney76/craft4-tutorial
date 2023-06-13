@@ -6,5 +6,5 @@
 /node_modules
 /config/license.key
 /templates/test
-/web/files
-/web/images
+/web/files/*
+!/web/files/userphotos
