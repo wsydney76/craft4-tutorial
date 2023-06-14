@@ -1,0 +1,10 @@
+{% extends "_layouts/main.twig" %}
+
+{% block content %}
+
+    {% include '_partials/entries-hierarchy.twig' with {
+        query: craft.entries
+            .section('topic')
+    } only %}
+
+{% endblock %}

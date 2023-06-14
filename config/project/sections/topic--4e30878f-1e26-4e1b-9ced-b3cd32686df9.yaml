@@ -1,0 +1,20 @@
+defaultPlacement: end
+enableVersioning: true
+handle: topic
+name: Topic
+propagationMethod: all
+siteSettings:
+  2393c71c-94e8-4e90-bb19-949696b8be0b: # English
+    enabledByDefault: true
+    hasUrls: true
+    template: _sections/topic
+    uriFormat: 'topics/{slug}'
+  b7acd2cf-9449-4637-a40c-2e266a19cc19: # Deutsch
+    enabledByDefault: true
+    hasUrls: true
+    template: _sections/topic
+    uriFormat: 'themen/{slug}'
+structure:
+  maxLevels: 2
+  uid: b1c084cd-ea86-49b5-a389-fd8dc76c9281
+type: structure

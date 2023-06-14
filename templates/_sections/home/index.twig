@@ -1,19 +1,21 @@
 {% extends "_layouts/main.twig" %}
 
-{% block title %}{% endblock %}
 
 {% block content %}
 
     {{ parent() }}
 
     {% cache %}
+
         {% include '_partials/entries-list.twig' with {
             heading: 'New Posts'|t,
             query: craft.entries
                 .section('post')
-                .limit(5)
+                .limit(3)
                 .orderBy('postDate desc')
         } only %}
+
+
     {% endcache %}
 
 {% endblock %}

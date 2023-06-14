@@ -1,7 +1,7 @@
 assets:
   tempSubpath: temporary-uploads
   tempVolumeUid: efd6d899-7b71-4318-8402-669e92416168 # System Files
-dateModified: 1686665096
+dateModified: 1686910585
 elementSources:
   craft\elements\Asset:
     -
@@ -16,6 +16,7 @@ elementSources:
       tableAttributes:
         - imageSize
         - 'field:a73e7c96-e9d2-4751-bf01-8a6baf5f3c46' # Alt Text
+        - 'field:560e7c36-f763-440f-b9b5-1d87228bc6df' # Copyright
         - dateModified
         - link
       type: native
@@ -135,7 +136,22 @@ elementSources:
       key: 'section:585f70b2-f84a-47ff-ad71-3faff9698ba9' # Post
       tableAttributes:
         - 'field:1d65442c-c0b9-46f4-8518-9a6c53e21bc1' # Featured Image
+        - 'field:2ac14555-67e9-455b-9337-b07a50478276' # Topics
         - drafts
+        - postDate
+        - link
+      type: native
+    -
+      heading: Categories
+      type: heading
+    -
+      defaultSort:
+        - postDate
+        - desc
+      disabled: false
+      key: 'section:4e30878f-1e26-4e1b-9ced-b3cd32686df9' # Topic
+      tableAttributes:
+        - 'field:1d65442c-c0b9-46f4-8518-9a6c53e21bc1' # Featured Image
         - postDate
         - link
       type: native
@@ -171,8 +187,10 @@ meta:
     0e989e8d-658a-4a1e-acf5-edb2387959ab: 'Post Index' # Post Index
     1d65442c-c0b9-46f4-8518-9a6c53e21bc1: 'Featured Image' # Featured Image
     1eac01fa-9e12-426e-a043-60ae35acf391: Cite # Cite
+    2ac14555-67e9-455b-9337-b07a50478276: Topics # Topics
     2be01897-dbaf-4c19-a6d9-db80ada8fc8f: 'Public Schema' # Public Schema
     4b9eed77-fa62-4ecc-9486-744a64f075d4: Caption # Caption
+    4e30878f-1e26-4e1b-9ced-b3cd32686df9: Topic # Topic
     5c400efe-2716-4221-a54a-4ebaf6a3c6cb: 'Heading Level' # Heading Level
     5f021491-7c29-4320-be70-454d594268af: Page # Page
     18e8e721-36cd-4c7a-a02a-44c513fb3cb8: Default # Default
@@ -190,9 +208,10 @@ meta:
     817d3d1a-d840-41a0-85a2-898d07aef769: Default # Default
     0837f34c-eb77-4cca-bded-4b9c2d688a90: 'Site Name' # Site Name
     2393c71c-94e8-4e90-bb19-949696b8be0b: English # English
+    7035f447-3559-4542-9f1d-2b71bbc7a15a: 'Topic Index' # Topic Index
     8937bb02-c9d0-460b-81ef-1f1bda00e1f7: 'Site Info - Global Settings' # Site Info - Global Settings
     9013e485-c018-45be-825d-d7223ee50703: 'Public Schema' # Public Schema
-    9128a883-c73e-4009-b8d5-7971ce954682: 'Dynamic Content' # Dynamic Content
+    9128a883-c73e-4009-b8d5-7971ce954682: Special # Special
     10877b5b-ab25-4e80-b0c0-74947be617eb: 'Block Type' # Block Type
     a4a0dfdc-289d-4d50-baae-6a3215a85701: Text # Text
     a7f4b9fd-a554-4545-af32-3b57544c9432: 'Site Info - Global Settings' # Site Info - Global Settings
@@ -206,6 +225,7 @@ meta:
     c9a4fbad-6ca0-4e20-ba72-da2c14a38190: Images # Images
     eb230d0c-f88a-40de-a743-994de14eb8f8: Style # Style
     efd6d899-7b71-4318-8402-669e92416168: 'System Files' # System Files
+    fcf21393-86a6-4f40-8a9a-3c829a2316a1: Default # Default
 system:
   edition: solo
   live: true

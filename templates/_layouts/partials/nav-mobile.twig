@@ -11,14 +11,14 @@
         <li>{{ navEntry.link }}</li>
     {% endfor %}
 
-    {% for localizedEntry in localizedEntries %}
-        <li><a href="{{ localizedEntry.url }}">{{ localizedEntry.site.name }}</a></li>
+    {% for localizedUrl in localizedUrls %}
+        <li><a href="{{ localizedUrl.url }}">{{ localizedUrl.name }}</a></li>
     {% endfor %}
 
-    <a class="cursor-pointer absolute top-0 right-5 bg-gray-500" href="#">
+    <a class="cursor-pointer absolute top-0 right-5 bg-gray-500" aria-label="{{ 'Close'|t }}" href="#">
         {% include '_icons/close.svg' %}
     </a>
 </ul>
-<a class="md:hidden cursor-pointer absolute top-5 right-5" href="#mobile-navbar">
+<a class="md:hidden cursor-pointer absolute top-5 right-5" aria-label="{{ 'Open'|t }}" href="#mobile-navbar">
     {% include '_icons/menu.svg' %}
 </a>

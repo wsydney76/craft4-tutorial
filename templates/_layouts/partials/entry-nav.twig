@@ -1,14 +1,14 @@
-<nav class="mt-12 flex justify-between">
+<nav class="mt-12 flex justify-between space-x-4 rtl:space-x-reverse">
     <div>
         {% set prev = entry.prev(condition) %}
         {% if prev %}
-            &lt; {{ prev.link }}
+            &lt; <a href="{{ prev.url }}">{{ prev.title|truncate(35) }}</a>
         {% endif %}
     </div>
     <div class="text-right">
         {% set next = entry.next(condition) %}
         {% if next %}
-            {{ next.link }} &gt;
+            <a href="{{ next.url }}">{{ next.title|truncate(35) }}</a> &gt;
         {% endif %}
     </div>
 </nav>

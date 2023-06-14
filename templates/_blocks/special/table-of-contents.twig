@@ -1,0 +1,17 @@
+{% set classes = {
+    h2: 'font-semibold',
+    h3: 'ps-8'
+} %}
+
+<nav class="bg-white p-4 border border-gray-300 shadow-md not-prose">
+    <div class="font-semibold text-xl">
+        {{ 'Table of Contents'|t }}
+    </div>
+    <ul class="mt-4 text-base space-y-1">
+        {% for headingBlock in blocks|filter(b => b.type.handle == 'heading') %}
+            <li>
+                <a class="{{ classes[headingBlock.headingLevel.value] }}  hover:underline" href="#{{ headingBlock.text|id }}">{{ headingBlock.text }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</nav>

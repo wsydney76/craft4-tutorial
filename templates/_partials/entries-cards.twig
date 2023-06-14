@@ -31,7 +31,11 @@
 
 
     {% include '_layouts/partials/pagination.twig' with {
-    	pageInfo
+        pageInfo
     } only %}
 
+{% else %}
+    <div>
+        {{ 'Nothing found.'|t }}
+    </div>
 {% endif %}

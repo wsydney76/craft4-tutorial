@@ -18,6 +18,7 @@ $isDev = App::env('CRAFT_ENVIRONMENT') === 'dev';
 $isProd = App::env('CRAFT_ENVIRONMENT') === 'production';
 
 return GeneralConfig::create()
+    ->pageTrigger('?page=')
 	->defaultWeekStartDay(1)
 	->omitScriptNameInUrls(true)
 	->cpTrigger($cpTrigger)

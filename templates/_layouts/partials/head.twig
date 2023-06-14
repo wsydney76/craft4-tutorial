@@ -3,16 +3,17 @@
 
 <title>{{ title }} | {{ siteInfo.siteName }}</title>
 
-<link rel="canonical" href="{{ entry.url }}">
+{# https://favicon.io/favicon-generator/ #}
 
-{# https://developers.google.com/search/docs/specialty/international/localized-versions?hl=de#language-codes #}
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
 
-{% set localizedEntries = localizedEntries|unshift(entry) %}
-{% for localizedEntry in localizedEntries %}
-    <link rel="alternate" hreflang="{{ localizedEntry.site.language }}" href="{{ localizedEntry.url }}">
-{% endfor %}
-
-{# SEO things here, typically inserted by a plugin #}
+{#
+SEO here, typically inserted by a plugin using a template hook.
+This includes things like
+    * canonical url
+    * alternate urls for different sites
+    * meta tags
+#}
 
 {# load assets #}
-<link href="{{ url('/assets/dist/app.css') }}" rel="stylesheet">
+<link href="/assets/dist/app.css" rel="stylesheet">

@@ -1,0 +1,16 @@
+{% if entry is defined  %}
+    {% set entries = entry ? [entry] : null %}
+{% endif %}
+
+{% set prefix = prefix ?? '' %}
+
+{% if entries %}
+    <div class="my-8 flex space-x-3 rtl:space-x-reverse">
+        {% for entry in entries %}
+            {% include '_partials/button.twig' with {
+            	url: entry.url,
+                caption: prefix ? "#{prefix}: #{entry.title}": entry.title
+            } only %}
+        {% endfor %}
+    </div>
+{% endif %}

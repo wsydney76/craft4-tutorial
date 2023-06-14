@@ -1,0 +1,28 @@
+<section class="mt-8 prose prose-slate">
+
+    {% set entries = query.all %}
+
+
+    {% if entries %}
+
+        {% if heading is defined %}
+            <h2>{{ heading }}</h2>
+        {% endif %}
+
+        <ul>
+            {% nav entry in entries %}
+                <li>
+                    {{ entry.link }}
+                    {% ifchildren %}
+                        <ul>
+                            {% children %}
+                        </ul>
+                    {% endifchildren %}
+                </li>
+            {% endnav %}
+        </ul>
+
+
+    {% endif %}
+
+</section>

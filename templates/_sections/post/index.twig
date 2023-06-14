@@ -2,39 +2,21 @@
 
 {% block content %}
 
-    {% embed '_layouts/partials/box.twig' %}
-        {% block content %}
-
-            {% from '_macros/lib.twig' import img %}
-
-            <section class="flex space-x-4 items-center">
-                {% set image = entry.author.photo %}
-
-                {% if image %}
-                    {{ img(image, {
-                        transform: {width: 40, height: 40},
-                        attr: {class: 'rounded-full'}
-                    }) }}
-                {% endif %}
-
-                <div>
-                    {{ 'Published on {date} by {name}'|t({
-                        date: entry.postDate|datetime('short'),
-                        name: entry.author.name
-                    }) }}
-                </div>
-            </section>
-
-        {% endblock %}
-    {% endembed %}
-
+    {% include '_sections/post/meta.twig' with {
+    	entry
+    } only %}
 
     {{ parent() }}
+
+    {% include '_partials/entries-buttons.twig' with {
+        entries: craft.entries.section('topic').relatedTo(entry).all,
+        prefix: 'Topic'|t
+    } only %}
+
 
     {% include '_layouts/partials/entry-nav.twig' with {
         entry,
         condition: {section: 'post', orderBy: 'postDate desc'}
     } only %}
-
 
 {% endblock %}

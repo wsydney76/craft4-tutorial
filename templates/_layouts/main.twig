@@ -1,66 +1,76 @@
 {% apply spaceless %}
-    {# Needed in multiple places, so load in advance #}
-	{% set localizedEntries = entry.localized.all %}
+
+    {#
+    Set variables for layout, so that
+        * we enable pages that are not backed by an entry
+        * let templates overwrite default entry values
+    #}
 
     {# let templates overwrite title #}
-    {% set title = title ?? entry.title %}
+    {% set title = title ?? entry.title ?? 'Untitled'|t %}
 
     {# let templates overwrite featured image, use global images by default #}
     {% set featuredImage = featuredImage ?? entry.featuredImage.one ?? siteInfo.featuredImage.one %}
-{% endapply %}
+
+{% endapply -%}
 <!DOCTYPE html>
-<html lang="{{ craft.app.language }}" style="overflow-y: scroll;">
+<html lang="{{ craft.app.language }}" dir="{{ craft.app.locale.orientation }}" style="overflow-y: scroll;">
 <head>
-    {% include '_layouts/partials/head.twig' with {
-    	entry,
-        title,
-        localizedEntries
-    } only %}
+    {% include '_layouts/partials/head.twig' %}
 </head>
 
-<body class="bg-gray-50 text-prose max-w-screen-md mx-auto px-4">
+{% block body %}
+    <body class="bg-gray-50 text-prose max-w-screen-md mx-auto px-4">
 
-{# let screen reader users skip page heading #}
-<a href="#content" class="sr-only focus:not-sr-only">{{ 'Jump to content'|t }}</a>
+    {# let screen reader users skip page heading #}
+    {% block header %}
+        <a href="#content" class="sr-only focus:not-sr-only">{{ 'Jump to content'|t }}</a>
 
-<header class="mb-8">
+        <header class="mb-8">
 
-    {% include '_layouts/partials/nav.twig' with {
-        localizedEntries
-    } only %}
+            {% include '_layouts/partials/nav.twig' %}
 
-    {% block featured %}
-        {% if featuredImage %}
-            {% include '_layouts/partials/featuredImage.twig' with {
-                image: featuredImage
-            } only %}
-        {% endif %}
+            {% block featured %}
+                {% if featuredImage %}
+                    {% include '_layouts/partials/featured-image.twig' with {
+                        image: featuredImage
+                    } only %}
+                {% endif %}
+            {% endblock %}
+
+        </header>
     {% endblock %}
 
-</header>
+    {% block main %}
+        <main id="content" class="mt-8">
+            {% block title %}
+                <h1 class="mb-6 font-bold text-4xl">{{ title }}</h1>
+            {% endblock %}
 
-<main id="content" class="mt-8">
-    {% block title %}
-        <h1 class="mb-6 font-bold text-4xl">{{ title }}</h1>
+            {% block content %}
+                {% if entry is defined and entry.bodyContent %}
+                    {% include '_partials/blocks.twig' with {
+                        query: entry.bodyContent
+                    } only %}
+                {% endif %}
+            {% endblock %}
+        </main>
     {% endblock %}
 
-    {% block content %}
-        {% if entry.bodyContent %}
-            {% include '_partials/blocks.twig' with {
-            	query: entry.bodyContent
-            } only %}
-        {% endif %}
+    {% block footer %}
+        <footer class="mt-8 border-t border-gray-400 py-4 flex justify-between">
+            <div>
+                &copy; {{ now|date('Y') }} {{ siteInfo.copyright }}
+            </div>
+            {% if entry is defined %}
+                <div>
+                    <a class="text-sm text-gray-600" href="{{ entry.cpEditUrl }}">{{ 'Edit'|t }}</a>
+                </div>
+            {% endif %}
+        </footer>
     {% endblock %}
-</main>
 
-<footer class="mt-8 border-t border-gray-400 py-4 flex justify-between">
-    <div>
-        &copy; {{ now|date('Y') }} {{ siteInfo.copyright }}
-    </div>
-    <div>
-        <a class="text-sm text-gray-500" href="{{ entry.cpEditUrl }}">{{ 'Edit'|t }}</a>
-    </div>
-</footer>
-
-</body>
+    </body>
+{% endblock %}
 </html>
+

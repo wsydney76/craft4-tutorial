@@ -10,7 +10,7 @@ module.exports = {
         extend: {
             screens: {
                 // the default of 768px is a bit too small for our needs
-                md: '840px',
+                md: '825px',
             },
             colors: {
                 // set the global gray flavor
@@ -18,7 +18,17 @@ module.exports = {
 
                 // let colors match the text of the text color of the typography plugin
                 prose: colors.slate[900]
-            }
+            },
+
+            // make the list bullets a bit more visible
+            // https://tailwindcss.com/docs/typography-plugin#adding-custom-color-themes
+            typography: (theme) => ({
+                slate: {
+                    css: {
+                        '--tw-prose-bullets': theme('colors.gray[400]'),
+                    }
+                }
+            }),
         },
     },
     plugins: [

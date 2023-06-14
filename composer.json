@@ -1,7 +1,7 @@
 {
   "description": "Empty Craft 4 Starter",
   "require": {
-    "craftcms/cms": "4.4.13",
+    "craftcms/cms": "4.4.14",
     "vlucas/phpdotenv": "^5.4.0"
   },
   "require-dev": {

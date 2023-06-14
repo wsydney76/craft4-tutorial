@@ -58,10 +58,10 @@ fieldLayouts:
         uid: 6aacb145-186e-49b1-9bd2-baaa3327a8ba
         userCondition: null
 handle: home
-hasTitleField: false
+hasTitleField: true
 name: Home
 section: 21e8b35e-5b6d-4f11-bc0e-26fcaa107ce8 # Home
 sortOrder: 1
 titleFormat: '{section.name|raw}'
 titleTranslationKeyFormat: null
-titleTranslationMethod: site
+titleTranslationMethod: language

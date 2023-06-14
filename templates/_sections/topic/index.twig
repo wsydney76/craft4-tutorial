@@ -1,0 +1,26 @@
+{% extends "_layouts/main.twig" %}
+
+{% set allTopicIds = (entry.children.ids|push(entry.id)) %}
+
+{% set title = "#{'Topic'|t}: #{entry.title}" %}
+{% set latestPost = craft.entries.section('post').relatedTo(allTopicIds).one %}
+{% if latestPost %}
+    {% set featuredImage = latestPost.featuredImage.one %}
+{% endif %}
+
+
+{% block content %}
+
+    {% include '_partials/entries-buttons.twig' with {
+        entry: entry.parent
+    } only %}
+
+    {% include '_partials/entries-buttons.twig' with {
+    	entries: entry.children.all
+    } only %}
+
+    {% include '_partials/entries-cards.twig' with {
+        query: craft.entries.section('post')
+            .relatedTo(allTopicIds)
+    } only %}
+{% endblock %}
