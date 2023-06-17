@@ -1,5 +1,7 @@
 {% extends "_layouts/main.twig" %}
 
+{% set entryNavCondition = {section: 'post', orderBy: 'postDate desc'} %}
+
 {% block content %}
 
     {% include '_sections/post/meta.twig' with {
@@ -13,10 +15,5 @@
         prefix: 'Topic'|t
     } only %}
 
-
-    {% include '_layouts/partials/entry-nav.twig' with {
-        entry,
-        condition: {section: 'post', orderBy: 'postDate desc'}
-    } only %}
 
 {% endblock %}

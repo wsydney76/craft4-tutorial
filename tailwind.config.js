@@ -9,8 +9,7 @@ module.exports = {
     theme: {
         extend: {
             screens: {
-                // the default of 768px is a bit too small for our needs
-                md: '825px',
+                xl: '1200px',
             },
             colors: {
                 // set the global gray flavor

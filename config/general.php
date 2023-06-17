@@ -33,6 +33,8 @@ return GeneralConfig::create()
 	->generateTransformsBeforePageLoad(!$isCpRequest)
 	->optimizeImageFilesize(false)
 	->revAssetUrls(true)
+    ->transformGifs(false)
+    ->transformSvgs(false)
 	->enableTemplateCaching($isProd)
 	->aliases([
 		// Prevent the @web alias from being set automatically (avoid cache poisoning vulnerability)

@@ -16,7 +16,7 @@ fieldLayouts:
             uid: 53b039bc-1e34-432c-adfd-6ebaa5e40260
             userCondition: null
             warning: null
-            width: 100
+            width: 50
           -
             elementCondition: null
             fieldUid: 4b9eed77-fa62-4ecc-9486-744a64f075d4 # Caption
@@ -28,7 +28,19 @@ fieldLayouts:
             uid: e7f50fae-c8f1-4a55-9231-3186509b9f19
             userCondition: null
             warning: null
-            width: 100
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 8ed4044d-89b6-4d6b-a8a3-e303f533263a # Style
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fc2dbe43-5774-4787-a8a6-a78db3a25d39
+            userCondition: null
+            warning: null
+            width: 25
         name: Content
         uid: 76e79da0-ac5e-42ef-b095-ff42e4ff2b28
         userCondition: null
@@ -53,12 +65,36 @@ fields:
     translationKeyFormat: null
     translationMethod: language
     type: craft\fields\PlainText
+  8ed4044d-89b6-4d6b-a8a3-e303f533263a: # Style
+    columnSuffix: uoxadpzo
+    contentColumnType: string
+    fieldGroup: null
+    handle: style
+    instructions: null
+    name: Style
+    searchable: false
+    settings:
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Wide
+            -
+              - value
+              - wide
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Checkboxes
   abb455ba-032b-461d-9c8d-dca9ed3fc7bd: # Image
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: image
-    instructions: 'At least 768px wide'
+    instructions: 'At least 768px wide. For best result, use 1000px min. if the wide style is used.'
     name: Image
     searchable: true
     settings:

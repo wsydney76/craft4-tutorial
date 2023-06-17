@@ -5,7 +5,8 @@
 
         {# Do not lazy load #}
         {{ img(image, {
-            transform: {width: 825, height: 300},
+            transform: {width: 1280, height: 450},
+            srcset: [1200, 768, 480],
             attr: {loading: null, fetchpriority: 'high'}
         }) }}
         

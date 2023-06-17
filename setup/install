@@ -13,6 +13,7 @@ ddev start &&
 ddev composer install &&
 ddev craft db/restore setup/seed.sql.zip --interactive=0 &&
 ddev craft setup/keys &&
+echo Installing npm packages... &&
 ddev npm install &&
 ddev describe &&
 ddev launch

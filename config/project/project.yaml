@@ -1,7 +1,7 @@
 assets:
   tempSubpath: temporary-uploads
   tempVolumeUid: efd6d899-7b71-4318-8402-669e92416168 # System Files
-dateModified: 1686910585
+dateModified: 1686992863
 elementSources:
   craft\elements\Asset:
     -
@@ -193,6 +193,7 @@ meta:
     4e30878f-1e26-4e1b-9ced-b3cd32686df9: Topic # Topic
     5c400efe-2716-4221-a54a-4ebaf6a3c6cb: 'Heading Level' # Heading Level
     5f021491-7c29-4320-be70-454d594268af: Page # Page
+    8ed4044d-89b6-4d6b-a8a3-e303f533263a: Style # Style
     18e8e721-36cd-4c7a-a02a-44c513fb3cb8: Default # Default
     19a49103-3b3e-48c0-955b-996599d8c651: Default # Default
     19d8011f-2129-4d06-b597-49d7125063c7: Quote # Quote

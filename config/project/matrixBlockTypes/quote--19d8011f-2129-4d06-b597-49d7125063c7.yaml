@@ -28,7 +28,7 @@ fieldLayouts:
             uid: 44761774-ed94-4a0a-8278-6ea13d3b3d48
             userCondition: null
             warning: null
-            width: 100
+            width: 50
           -
             elementCondition: null
             fieldUid: eb230d0c-f88a-40de-a743-994de14eb8f8 # Style
@@ -40,7 +40,7 @@ fieldLayouts:
             uid: 867dfbcf-588a-435f-8dbd-b31e4d4a9347
             userCondition: null
             warning: null
-            width: 100
+            width: 25
         name: Content
         uid: 756bc6cb-dc8c-4411-a1ce-c980d292105f
         userCondition: null

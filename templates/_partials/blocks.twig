@@ -1,7 +1,7 @@
 {% set blocks = query.all %}
 
 {% if blocks %}
-    <div class="my-8 prose prose-lg prose-slate max-w-none  hyphens-auto">
+    <div class="my-8 prose prose-lg prose-slate max-w-none hyphens-auto">
         {% for block in blocks %}
             <div>
                 {% include "_blocks/#{block.type.handle|kebab}.twig" with {

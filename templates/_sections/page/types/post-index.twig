@@ -5,6 +5,8 @@
     {% set featuredImage = latestPost.featuredImage.one %}
 {% endif %}
 
+{% set mainWidth = 'xl' %}
+
 {% block content %}
 
     {{ parent() }}
@@ -12,4 +14,5 @@
     {% include '_partials/entries-cards.twig' with {
         query: craft.entries.section('post')
     } only %}
+
 {% endblock %}

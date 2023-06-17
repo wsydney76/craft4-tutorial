@@ -12,6 +12,12 @@
     {# let templates overwrite featured image, use global images by default #}
     {% set featuredImage = featuredImage ?? entry.featuredImage.one ?? siteInfo.featuredImage.one %}
 
+    {% set mainWidth = mainWidth ?? 'md' %}
+    {% set widthClasses = {
+        md: 'max-w-screen-md mx-auto',
+        xl: 'max-w-screen-xl mx-auto'
+    } %}
+
 {% endapply -%}
 <!DOCTYPE html>
 <html lang="{{ craft.app.language }}" dir="{{ craft.app.locale.orientation }}" style="overflow-y: scroll;">
@@ -20,13 +26,13 @@
 </head>
 
 {% block body %}
-    <body class="bg-gray-50 text-prose max-w-screen-md mx-auto px-4">
+    <body class="bg-gray-50 text-prose px-4">
 
     {# let screen reader users skip page heading #}
     {% block header %}
         <a href="#content" class="sr-only focus:not-sr-only">{{ 'Jump to content'|t }}</a>
 
-        <header class="mb-8">
+        <header class="mb-8 max-w-screen-xl mx-auto">
 
             {% include '_layouts/partials/nav.twig' %}
 
@@ -42,9 +48,9 @@
     {% endblock %}
 
     {% block main %}
-        <main id="content" class="mt-8">
+        <main id="content" class="{{ widthClasses[mainWidth] }} mt-8">
             {% block title %}
-                <h1 class="mb-6 font-bold text-4xl">{{ title }}</h1>
+                <h1 class="mb-12 text-6xl leading-tight">{{ title }}</h1>
             {% endblock %}
 
             {% block content %}
@@ -54,11 +60,22 @@
                     } only %}
                 {% endif %}
             {% endblock %}
+
         </main>
     {% endblock %}
 
     {% block footer %}
-        <footer class="mt-8 border-t border-gray-400 py-4 flex justify-between">
+
+        {% if entryNavCondition is defined %}
+            <div class="max-w-screen-xl mx-auto">
+                {% include '_layouts/partials/entry-nav.twig' with {
+                    entry,
+                    condition: {section: 'post', orderBy: 'postDate desc'}
+                } only %}
+            </div>
+        {% endif %}
+
+        <footer class="max-w-screen-xl mx-auto mt-12 border-t border-gray-400 py-4 flex justify-between">
             <div>
                 &copy; {{ now|date('Y') }} {{ siteInfo.copyright }}
             </div>

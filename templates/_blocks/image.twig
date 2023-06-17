@@ -1,12 +1,14 @@
 {% from '_macros/lib.twig' import img %}
 
 {% set image = block.image.one %}
+{% set wide = block.style.contains('wide')%}
 
 {% if image %}
-    <figure class="relative">
+    <figure class="{{ wide ? '-mx-24' }}">
 
         {{ img(image, {
-            transform: {width: 825, height: 450}
+            transform: wide ? {width: 1000, height: 500} : {width: 825, height: 450},
+            scrset: wide ?  [1000, 768, 400] : null
         }) }}
 
 
