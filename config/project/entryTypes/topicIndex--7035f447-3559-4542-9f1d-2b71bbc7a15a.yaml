@@ -43,7 +43,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dismissible: false
+            dismissible: true
             elementCondition: null
             style: tip
             tip: 'Topics will be displayed here'

@@ -1,0 +1,13 @@
+{% set entries = craft.entries.draftOf(element).id('not ' ~ element.id).all %}
+{% if entries %}
+    <div class="readable">
+        <blockquote class="note warning">
+            {{ 'Draft(s) exist:'|t }}
+            {% for entry in entries %}
+                <div>
+                    <a href="{{ entry.cpEditUrl }}">{{ entry.title }}</a>
+                </div>
+            {% endfor %}
+        </blockquote>
+    </div>
+{% endif %}

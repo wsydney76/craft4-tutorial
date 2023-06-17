@@ -5,6 +5,13 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            elementCondition: null
+            template: _cp/drafts
+            type: craft\fieldlayoutelements\Template
+            uid: d19755e0-eb25-4af4-9dd1-cbf29a2eeb68
+            userCondition: null
+            width: 100
+          -
             autocapitalize: true
             autocomplete: false
             autocorrect: true

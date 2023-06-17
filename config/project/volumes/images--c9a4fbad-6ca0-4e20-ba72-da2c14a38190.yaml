@@ -54,6 +54,13 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+          -
+            elementCondition: null
+            template: _cp/related-entries
+            type: craft\fieldlayoutelements\Template
+            uid: fc9151dc-3a9e-4b69-b85f-243107885e1d
+            userCondition: null
+            width: 100
         name: Content
         uid: c1e3a4d5-1e1c-4d1a-990f-39e3b823150c
         userCondition: null

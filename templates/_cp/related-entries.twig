@@ -1,0 +1,49 @@
+<div>
+    <h2>{{ 'Related Entries'|t }}</h2>
+
+    {% set entries = craft.entries
+        .relatedTo([
+            'or',
+            {targetElement: element},
+            {targetElement: element, field: 'bodyContent.image'}
+        ])
+        .status(null)
+        .drafts(null)
+        .provisionalDrafts(null)
+        .site('*')
+        .unique()
+    .collect %}
+
+    {% if entries.count %}
+        <table class="table data fullwidth">
+            <thead>
+                <tr>
+                    <th>{{ 'Title'|t('app') }}</th>
+                    <th>{{ 'Section'|t('app') }}</th>
+                    <th>{{ 'Draft'|t('app') }}?</th>
+                </tr>
+            </thead>
+            {% for entry in entries %}
+                <tr>
+                    <td>
+                        <span class="status {{ entry.status }}"></span>
+                        <a href="{{ entry.cpEditUrl }}">{{ entry.title }}</a>
+                    </td>
+                    <td>
+                        {{ entry.section.name|t }}
+                    </td>
+                    <td>
+                        {{ entry.isProvisionalDraft ? 'Provisional' }}
+                        {{ entry.isDraft ? 'Draft' }}
+                    </td>
+                </tr>
+
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>
+            {{ 'Nothing found.'|t }}
+        </p>
+    {% endif %}
+
+</div>
