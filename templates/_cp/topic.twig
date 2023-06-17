@@ -1,0 +1,30 @@
+<div>
+    <h2>{{ 'Related Posts'|t }}</h2>
+
+    {% set entries = craft.entries
+        .relatedTo(element)
+        .status(null)
+        .drafts(null)
+    .collect %}
+
+   <table class="table data">
+       {% for entry in entries %}
+           <tr>
+               <td>
+                   <span class="status {{ entry.status }}"></span>
+                   <a class="go" href="{{ entry.cpEditUrl }}">{{ entry.title }}</a>
+               </td>
+               <td>
+                   {{ entry.isDraft ? 'Draft' }}
+               </td>
+               <td>
+                   {{ entry.postDate|datetime('short') }}
+                   
+               </td>
+           </tr>
+           {% else %}
+               {{ 'Nothing found.'|t }}
+       {% endfor %}
+   </table>
+
+</div>

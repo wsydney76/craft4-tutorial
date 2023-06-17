@@ -2,13 +2,13 @@
 
 {% set allTopicIds = (entry.children.ids|push(entry.id)) %}
 
-{% set title = "#{'Topic'|t}: #{entry.title}" %}
 {% set latestPost = craft.entries.section('post').relatedTo(allTopicIds).one %}
-{% if latestPost %}
-    {% set featuredImage = latestPost.featuredImage.one %}
-{% endif %}
 
-{% set mainWidth = 'xl' %}
+{% do _globals.set({
+    title: "#{'Topic'|t}: #{entry.title}",
+    featuredImage: latestPost ? latestPost.featuredImage.one : null,
+    mainWidth: 'xl'
+}) %}
 
 {% block content %}
 

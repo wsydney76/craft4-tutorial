@@ -60,6 +60,10 @@ class FauxTwigExtension extends AbstractExtension implements GlobalsInterface
             'pageInfo' => new Paginate(),
 
 
+            // Globals variable (Craft 4.5+)
+            '_globals' => new Collection()
+
+
         ];
     }
 }

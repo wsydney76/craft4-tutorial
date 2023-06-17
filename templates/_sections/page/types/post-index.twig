@@ -1,11 +1,11 @@
 {% extends "_layouts/main.twig" %}
 
 {% set latestPost = craft.entries.section('post').one %}
-{% if latestPost %}
-    {% set featuredImage = latestPost.featuredImage.one %}
-{% endif %}
 
-{% set mainWidth = 'xl' %}
+{% do _globals.set({
+    featuredImage: latestPost ? latestPost.featuredImage.one : null,
+    mainWidth: 'xl'
+}) %}
 
 {% block content %}
 

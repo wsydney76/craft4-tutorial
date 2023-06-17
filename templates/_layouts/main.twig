@@ -7,12 +7,12 @@
     #}
 
     {# let templates overwrite title #}
-    {% set title = title ?? entry.title ?? 'Untitled'|t %}
+    {% set title = _globals.get('title') ?? entry.title ?? 'Untitled'|t %}
 
     {# let templates overwrite featured image, use global images by default #}
-    {% set featuredImage = featuredImage ?? entry.featuredImage.one ?? siteInfo.featuredImage.one %}
+    {% set featuredImage = _globals.get('featuredImage') ?? entry.featuredImage.one ?? siteInfo.featuredImage.one %}
 
-    {% set mainWidth = mainWidth ?? 'md' %}
+    {% set mainWidth = _globals.get('mainWidth') ?? 'md' %}
     {% set widthClasses = {
         md: 'max-w-screen-md mx-auto',
         xl: 'max-w-screen-xl mx-auto'

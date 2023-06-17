@@ -2,13 +2,15 @@
 
 {% set image = block.image.one %}
 {% set wide = block.style.contains('wide')%}
+{% set fullHeight = block.style.contains('fullHeight')%}
 
 {% if image %}
-    <figure class="{{ wide ? '-mx-24' }}">
+    <figure class="{{ wide ? 'lg:-mx-24' }}">
 
+        {# Ratio 21:9 #}
         {{ img(image, {
-            transform: wide ? {width: 1000, height: 500} : {width: 825, height: 450},
-            scrset: wide ?  [1000, 768, 400] : null
+            transform: wide ? {width: 1024, height: fullHeight ? null : 440} : {width: 825, height: fullHeight ? null : 350},
+            scrset: wide ?  [1024, 825, 400] : null
         }) }}
 
 

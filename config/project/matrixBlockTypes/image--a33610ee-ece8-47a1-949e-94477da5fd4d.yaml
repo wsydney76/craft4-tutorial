@@ -86,6 +86,17 @@ fields:
             -
               - default
               - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Full Height'
+            -
+              - value
+              - fullHeight
+            -
+              - default
+              - ''
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Checkboxes
