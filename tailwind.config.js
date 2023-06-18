@@ -12,6 +12,9 @@ module.exports = {
                 xl: '1200px',
             },
             colors: {
+                // set a brand color
+                brand: colors.slate,
+
                 // set the global gray flavor
                 gray: colors.slate,
 

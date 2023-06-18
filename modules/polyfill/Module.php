@@ -20,25 +20,20 @@ class Module extends BaseModule
     {
         Craft::setAlias('@modules/polyfill', __DIR__);
 
-        // Set the controllerNamespace based on whether this is a console or web request
-        if (Craft::$app->request->isConsoleRequest) {
-            $this->controllerNamespace = 'modules\\polyfill\\console\\controllers';
-        } else {
-            $this->controllerNamespace = 'modules\\polyfill\\controllers';
-        }
-
         parent::init();
 
         // Defer most setup tasks until Craft is fully initialized
         Craft::$app->onInit(function() {
             $this->attachEventHandlers();
-            // ...
         });
-        Craft::$app->view->registerTwigExtension(new FeExtension());
+
     }
 
     private function attachEventHandlers(): void
     {
+        // Register Front-End Extension
+        Craft::$app->view->registerTwigExtension(new FeExtension());
+
         // Register Collection::set() as an alias of put() - with support for bulk-setting values
         Collection::macro('set', function(mixed $values) {
             /** @var Collection $this */

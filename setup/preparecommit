@@ -1,4 +1,10 @@
 #!/bin/bash
 
+# Delete all but the most recent revision
+ddev craft utils/prune-revisions --max-revisions=1
+
+# Backup the database
 ddev craft db/backup setup/seed.sql --zip --overwrite=1
+
+# Build the front-end css file
 ddev npm run build

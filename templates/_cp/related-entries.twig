@@ -9,8 +9,8 @@
         .drafts(null)
         .provisionalDrafts(null)
         .site('*')
-        .preferSites([element.site.handle])
         .unique()
+        .preferSites([element.site.handle])
     .collect %}
 
     <h2>{{ 'Incoming {count,plural,=1{Relationship} other{Relationships}}'|t({count: entries.count}) }}</h2>
