@@ -1,11 +1,14 @@
-{% set entries = craft.entries.draftOf(element).id('not ' ~ element.id).all %}
-{% if entries %}
+{% set entries = craft.entries.draftOf(element).id('not ' ~ element.id).collect %}
+{% if entries.count %}
     <div class="readable">
         <blockquote class="note warning">
-            {{ 'Draft(s) exist:'|t }}
+
+            {{ '{count,plural,=1{Draft exists} other{Drafts exist}}'|t({count: entries.count}) }}:
+
             {% for entry in entries %}
                 <div>
                     <a href="{{ entry.cpEditUrl }}">{{ entry.title }}</a>
+                    ({{ entry.draftName }}, {{ entry.creator.name }}, {{ craft.app.formatter.asRelativeTime(entry.dateCreated) }})
                 </div>
             {% endfor %}
         </blockquote>

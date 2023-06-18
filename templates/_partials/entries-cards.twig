@@ -20,7 +20,7 @@
                         {% set block = entry.bodyContent.one %}
                         {% if block %}
                             <div class="mt-2">
-                                {{ block.text|md|striptags|truncate(80) }}
+                                {{ block.text|md|striptags|truncate(120) }}
                             </div>
                         {% endif %}
                     {% endblock %}

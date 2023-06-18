@@ -18,7 +18,6 @@ $isDev = App::env('CRAFT_ENVIRONMENT') === 'dev';
 $isProd = App::env('CRAFT_ENVIRONMENT') === 'production';
 
 return GeneralConfig::create()
-    ->pageTrigger('?page=')
 	->defaultWeekStartDay(1)
 	->omitScriptNameInUrls(true)
 	->cpTrigger($cpTrigger)
@@ -27,7 +26,7 @@ return GeneralConfig::create()
 	->allowAdminChanges($isDev)
 	->preventUserEnumeration(true)
 	->disallowRobots(!$isProd)
-	->maxRevisions(1)
+	->maxRevisions(3)
 	->convertFilenamesToAscii(true)
 	->limitAutoSlugsToAscii(true)
 	->generateTransformsBeforePageLoad(!$isCpRequest)

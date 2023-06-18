@@ -1,0 +1,4 @@
+#!/bin/bash
+
+ddev craft db/backup setup/seed.sql --zip --overwrite=1
+ddev npm run build

@@ -1,6 +1,4 @@
 <div>
-    <h2>{{ 'Related Entries'|t }}</h2>
-
     {% set entries = craft.entries
         .relatedTo([
             'or',
@@ -11,17 +9,20 @@
         .drafts(null)
         .provisionalDrafts(null)
         .site('*')
+        .preferSites([element.site.handle])
         .unique()
     .collect %}
+
+    <h2>{{ 'Incoming {count,plural,=1{Relationship} other{Relationships}}'|t({count: entries.count}) }}</h2>
 
     {% if entries.count %}
         <table class="table data fullwidth">
             <thead>
-                <tr>
-                    <th>{{ 'Title'|t('app') }}</th>
-                    <th>{{ 'Section'|t('app') }}</th>
-                    <th>{{ 'Draft'|t('app') }}?</th>
-                </tr>
+            <tr>
+                <th>{{ 'Title'|t('app') }}</th>
+                <th>{{ 'Section'|t('app') }}</th>
+                <th>{{ 'Draft'|t('app') }}?</th>
+            </tr>
             </thead>
             {% for entry in entries %}
                 <tr>
@@ -33,8 +34,11 @@
                         {{ entry.section.name|t }}
                     </td>
                     <td>
-                        {{ entry.isProvisionalDraft ? 'Provisional' }}
-                        {{ entry.isDraft ? 'Draft' }}
+                        {% if entry.isProvisionalDraft %}
+                            {{ 'Provisional Draft'|t }}
+                        {% elseif entry.isDraft %}
+                            {{ 'Draft'|t('app') }}
+                        {% endif %}
                     </td>
                 </tr>
 
