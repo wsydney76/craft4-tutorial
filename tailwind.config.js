@@ -32,6 +32,9 @@ module.exports = {
                 }
             }),
         },
+        transitionDuration: {
+            DEFAULT: '400ms',
+        }
     },
     plugins: [
         require('@tailwindcss/typography'),
