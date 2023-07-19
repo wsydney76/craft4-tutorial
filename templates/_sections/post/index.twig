@@ -1,6 +1,6 @@
 {% extends "_layouts/main.twig" %}
 
-{% set entryNavCondition = {section: 'post', orderBy: 'postDate desc'} %}
+{% do _globals.set('entryNavCondition', {section: 'post', orderBy: 'postDate desc'}) %}
 
 {% block content %}
 

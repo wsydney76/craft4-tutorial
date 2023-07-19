@@ -66,11 +66,11 @@
 
     {% block footer %}
 
-        {% if entryNavCondition is defined %}
+        {% if _globals.get('entryNavCondition') %}
             <div class="max-w-screen-xl mx-auto">
                 {% include '_layouts/partials/entry-nav.twig' with {
                     entry,
-                    condition: {section: 'post', orderBy: 'postDate desc'}
+                    condition: _globals.get('entryNavCondition')
                 } only %}
             </div>
         {% endif %}
