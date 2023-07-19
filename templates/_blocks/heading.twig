@@ -1,4 +1,4 @@
 {{ tag(block.headingLevel.value, {
-    id: block.text|id,
+    id: block.text ? block.text|id : '',
     text: block.text
 }) }}
