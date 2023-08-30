@@ -18,8 +18,7 @@
  */
 
 use craft\helpers\App;
-use modules\polyfill\Module;
 
 return [
-    'id' => App::env('CRAFT_APP_ID') ?: 'CraftCMS', 'modules' => ['polyfill' => Module::class], 'bootstrap' => ['polyfill'],
+    'id' => App::env('CRAFT_APP_ID') ?: 'CraftCMS',
 ];

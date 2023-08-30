@@ -73,6 +73,9 @@ handle: siteInfo
 hasTitleField: false
 name: 'Site Info - Global Settings'
 section: a7f4b9fd-a554-4545-af32-3b57544c9432 # Site Info - Global Settings
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
 sortOrder: 1
 titleFormat: '{section.name|raw}'
 titleTranslationKeyFormat: null

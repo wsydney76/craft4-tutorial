@@ -30,6 +30,7 @@ fields:
     name: 'Block Type'
     searchable: false
     settings:
+      columnType: string
       options:
         -
           __assoc__:

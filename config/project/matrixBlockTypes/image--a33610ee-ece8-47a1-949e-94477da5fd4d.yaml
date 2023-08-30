@@ -16,7 +16,7 @@ fieldLayouts:
             uid: 53b039bc-1e34-432c-adfd-6ebaa5e40260
             userCondition: null
             warning: null
-            width: 25
+            width: 50
           -
             elementCondition: null
             fieldUid: 4b9eed77-fa62-4ecc-9486-744a64f075d4 # Caption
@@ -28,7 +28,7 @@ fieldLayouts:
             uid: e7f50fae-c8f1-4a55-9231-3186509b9f19
             userCondition: null
             warning: null
-            width: 50
+            width: 25
           -
             elementCondition: null
             fieldUid: 8ed4044d-89b6-4d6b-a8a3-e303f533263a # Style
@@ -165,7 +165,7 @@ fields:
       sources:
         - 'volume:c9a4fbad-6ca0-4e20-ba72-da2c14a38190' # Images
       targetSiteId: null
-      validateRelatedElements: true
+      validateRelatedElements: false
       viewMode: large
     translationKeyFormat: null
     translationMethod: site

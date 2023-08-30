@@ -44,6 +44,9 @@ handle: default
 hasTitleField: true
 name: Default
 section: 4e30878f-1e26-4e1b-9ced-b3cd32686df9 # Topic
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

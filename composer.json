@@ -1,7 +1,7 @@
 {
   "description": "Empty Craft 4 Starter",
   "require": {
-    "craftcms/cms": "4.4.17",
+    "craftcms/cms": "4.5.3",
     "vlucas/phpdotenv": "^5.4.0"
   },
   "require-dev": {
@@ -30,7 +30,8 @@
     "post-update-cmd": [
       "@php craft clear-caches/all",
       "@php craft migrate/all --interactive=0",
-      "@php craft on"
+      "@php craft on",
+      "@php craft project-config/rebuild"
     ]
   }
 }

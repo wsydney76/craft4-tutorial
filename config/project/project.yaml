@@ -1,7 +1,7 @@
 assets:
   tempSubpath: temporary-uploads
   tempVolumeUid: efd6d899-7b71-4318-8402-669e92416168 # System Files
-dateModified: 1689755768
+dateModified: 1693387713
 elementSources:
   craft\elements\Asset:
     -
@@ -198,7 +198,6 @@ meta:
     19a49103-3b3e-48c0-955b-996599d8c651: Default # Default
     19d8011f-2129-4d06-b597-49d7125063c7: Quote # Quote
     21e8b35e-5b6d-4f11-bc0e-26fcaa107ce8: Home # Home
-    32d347b0-ea6e-469f-92f8-d59f3fd496c7: 'Public Schema' # Public Schema
     63e734ee-d709-488a-bd8d-3a90ab070825: Text # Text
     78ba6fca-0979-4552-a36e-f6f7a001b0f5: Text # Text
     78f9590c-8302-4bbc-8e62-39e3f6a2bd57: Text # Text
@@ -211,7 +210,6 @@ meta:
     2393c71c-94e8-4e90-bb19-949696b8be0b: English # English
     7035f447-3559-4542-9f1d-2b71bbc7a15a: 'Topic Index' # Topic Index
     8937bb02-c9d0-460b-81ef-1f1bda00e1f7: 'Site Info - Global Settings' # Site Info - Global Settings
-    9013e485-c018-45be-825d-d7223ee50703: 'Public Schema' # Public Schema
     9128a883-c73e-4009-b8d5-7971ce954682: Special # Special
     10877b5b-ab25-4e80-b0c0-74947be617eb: 'Block Type' # Block Type
     a4a0dfdc-289d-4d50-baae-6a3215a85701: Text # Text
@@ -232,7 +230,7 @@ system:
   live: true
   name: $SYSTEM_NAME
   retryDuration: null
-  schemaVersion: 4.4.0.4
+  schemaVersion: 4.5.3.0
   timeZone: Europe/Berlin
 users:
   allowPublicRegistration: false

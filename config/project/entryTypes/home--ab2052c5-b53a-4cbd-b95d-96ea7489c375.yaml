@@ -61,6 +61,9 @@ handle: home
 hasTitleField: true
 name: Home
 section: 21e8b35e-5b6d-4f11-bc0e-26fcaa107ce8 # Home
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
 sortOrder: 1
 titleFormat: '{section.name|raw}'
 titleTranslationKeyFormat: null

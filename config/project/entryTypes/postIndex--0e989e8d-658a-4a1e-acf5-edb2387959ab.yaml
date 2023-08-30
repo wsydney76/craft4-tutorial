@@ -45,6 +45,9 @@ handle: postIndex
 hasTitleField: true
 name: 'Post Index'
 section: 5f021491-7c29-4320-be70-454d594268af # Page
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
 sortOrder: 3
 titleFormat: null
 titleTranslationKeyFormat: null
