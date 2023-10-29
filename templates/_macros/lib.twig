@@ -18,3 +18,13 @@
     {{ image.img(transform, srcset)|attr(attr) }}
     
 {% endmacro %}
+
+{# This must be called within a figure tag with position: relative #}
+{% macro copyrightOverlay(copyright) %}
+    {% if copyright %}
+        <figcaption class="absolute bottom-0 right-0 px-2 py-1 bg-black/50 text-white text-sm">
+            {{ 'Photo'|t }}: {{ copyright }}
+        </figcaption>
+    {% endif %}
+{% endmacro %}
+

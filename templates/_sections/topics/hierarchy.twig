@@ -1,27 +1,30 @@
-<div class="flex items-center space-x-4">
+<div class="flex items-center space-x-4 rtl:space-x-reverse">
 
     {% set parent = entry.parent %}
-
-    {% if parent %}
-        {% include '_partials/entries-buttons.twig' with {
-            entry: parent
-        } only %}
-        <div>
-            &gt;
-        </div>
-    {% endif %}
-
-    <div class="font-semibold text-xl">
-        {{ entry.title }}
-    </div>
-
     {% set children = entry.children.all %}
-    {% if children %}
-        <div>
-            &gt;
+
+    {% if parent or children %}
+        {% if parent %}
+            {% include '_partials/entries-buttons.twig' with {
+                entry: parent
+            } only %}
+            <div>
+                &gt;
+            </div>
+        {% endif %}
+
+        <div class="font-semibold text-xl">
+            {{ entry.title }}
         </div>
-        {% include '_partials/entries-buttons.twig' with {
-            entries: children
-        } only %}
+
+
+        {% if children %}
+            <div>
+                &gt;
+            </div>
+            {% include '_partials/entries-buttons.twig' with {
+                entries: children
+            } only %}
+        {% endif %}
     {% endif %}
 </div>

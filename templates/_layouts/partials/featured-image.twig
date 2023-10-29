@@ -1,4 +1,5 @@
 {% from '_macros/lib.twig' import img %}
+{% from '_macros/lib.twig' import copyrightOverlay %}
 
 {% if image %}
     <figure class="my-8 relative">
@@ -9,12 +10,8 @@
             srcset: [1200, 768, 480],
             attr: {loading: null, fetchpriority: 'high'}
         }) }}
-        
-        {% if image.copyright %}
-            <figcaption class="absolute bottom-0 right-0 px-2 py-1 bg-black/50 text-white text-sm">
-                {{ 'Photo'|t }}: {{ image.copyright }}
-            </figcaption>
-        {% endif %}
+
+        {{ copyrightOverlay(image.copyright) }}
 
     </figure>
 {% endif %}
