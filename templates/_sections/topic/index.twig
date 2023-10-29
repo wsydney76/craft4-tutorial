@@ -12,12 +12,8 @@
 
 {% block content %}
 
-    {% include '_partials/entries-buttons.twig' with {
-        entry: entry.parent
-    } only %}
-
-    {% include '_partials/entries-buttons.twig' with {
-    	entries: entry.children.all
+    {% include '_sections/topics/hierarchy.twig' with {
+    	entry
     } only %}
 
     {% include '_partials/entries-cards.twig' with {

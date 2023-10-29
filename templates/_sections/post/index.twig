@@ -11,7 +11,7 @@
     {{ parent() }}
 
     {% include '_partials/entries-buttons.twig' with {
-        entries: craft.entries.section('topic').relatedTo(entry).all,
+        entries: entry.topics,
         prefix: 'Topic'|t
     } only %}
 
