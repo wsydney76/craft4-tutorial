@@ -1,7 +1,7 @@
 assets:
   tempSubpath: temporary-uploads
   tempVolumeUid: efd6d899-7b71-4318-8402-669e92416168 # System Files
-dateModified: 1698303043
+dateModified: 1699889449
 elementSources:
   craft\elements\Asset:
     -
@@ -161,9 +161,9 @@ email:
   replyToEmail: null
   template: null
   transportSettings:
-    host: $MAILHOG_SMTP_HOSTNAME
+    host: $MAILPIT_SMTP_HOSTNAME
     password: ''
-    port: $MAILHOG_SMTP_PORT
+    port: $MAILPIT_SMTP_PORT
     useAuthentication: '0'
     username: ''
   transportType: craft\mail\transportadapters\Smtp
