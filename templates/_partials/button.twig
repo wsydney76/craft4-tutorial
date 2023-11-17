@@ -1,2 +1,16 @@
-<a class="block bg-white border border-gray-300 hover:bg-gray-200 transition-colors shadow-md px-3 py-1.5 rounded"
-   href="{{ url }}">{{ caption }}</a>
+{% set type = type ?? 'link' %}
+
+{% switch type %}
+
+{% case "link" %}
+
+    <a class="block bg-white border border-gray-300 hover:bg-gray-200 transition-colors shadow-md px-3 py-1.5 rounded"
+       href="{{ url }}">{{ caption }}</a>
+
+{% case "submit" %}
+
+    <button type="submit"
+            class="block bg-brand-700 text-white border border-gray-300 hover:bg-brand-900 transition-colors shadow-md px-3 py-1.5 rounded"
+    >{{ caption }}</button>
+    
+{% endswitch %}

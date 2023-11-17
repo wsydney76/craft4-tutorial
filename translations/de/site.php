@@ -18,6 +18,12 @@ return [
     '{count,plural,=1{Draft exists} other{Drafts exist}}' => '{count,plural,=1{Entwurf existiert} other{Entwürfe existieren}}',
     '“' => '„',
     '”' => '“',
+    'Search' => 'Suche',
+    'Search for:' => 'Suche nach:',
+    'Start' => 'Starten',
+    '{count,plural,=1{search result} other{search results}}' => '{count,plural,=1{Suchergebnis} other{Suchergebnisse}}',
+    'Your search for "{q}" didn’t return any results.' => 'Ihre Suche nach "{q}" ergab keine Ergebnisse.',
+
 
 
     // Control Panel translations
@@ -46,6 +52,7 @@ return [
     'Select an image' => 'Bild auswählen',
     'Special' => 'Spezial',
     'Style' => 'Stil',
+    'Search results will be display here.' => 'Suchergebnisse werden hier angezeigt.',
     'System Files' => 'Systemdateien',
     'Topics will be displayed here' => 'Themen werden hier angezeigt',
     'Volumes' => 'Volumen',

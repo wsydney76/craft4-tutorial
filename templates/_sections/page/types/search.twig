@@ -1,0 +1,54 @@
+{% extends "_layouts/main.twig" %}
+
+{% do _globals.set({
+    mainWidth: 'xl'
+}) %}
+
+{% set searchQuery = craft.app.request.getParam('q') %}
+
+{% block featured %}{% endblock %}
+
+{% block content %}
+    <form class="bg-white border border-brand-300 shadow-md p-4 md:flex md:space-x-4 items-center">
+
+        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 whitespace-nowrap" for="search-query">
+            {{ 'Search for:'|t }}
+        </label>
+
+        <input type="search"
+               id="search-query"
+               autofocus
+               class="mb-1 md:mb-0 bg-brand-100 appearance-none border border-brand-300 w-full p-2 text-gray-700 leading-tight focus:outline-none focus:bg-brand-50 focus:border-black"
+               name="q"
+               value="{{ searchQuery }}">
+
+
+        {% include '_partials/button.twig' with {
+            caption: 'Start'|t,
+            type: 'submit'
+        } only %}
+    </form>
+
+    {% if searchQuery %}
+
+        {% set query = craft.entries()
+            .section('post')
+            .search(searchQuery)
+            .orderBy('score') %}
+
+        {% set count = query.count %}
+
+        {% if count %}
+            <h2 class="mt-8 text-xl">{{ count }} {{ '{count,plural,=1{search result} other{search results}}'|t({count: count}) }}</h2>
+
+            {% include '_partials/entries-cards.twig' with {
+                query
+            } only %}
+        {% else %}
+            <div class="mt-4">
+                {{ 'Your search for "{q}" didn’t return any results.'|t({q: searchQuery, count: count}) }}
+            </div>
+        {% endif %}
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,54 @@
+fieldLayouts:
+  d92b1752-849b-432e-af14-8b25ede83f1e:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 82afec48-92cb-4107-a6b1-229ee80bd7d0
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dismissible: true
+            elementCondition: null
+            style: tip
+            tip: 'Search results will be display here.'
+            type: craft\fieldlayoutelements\Tip
+            uid: 27378ad7-b06b-406e-bc74-e34a7610f157
+            userCondition: null
+        name: Inhalt
+        uid: cddd3177-83ba-4ba7-94df-a0c3333e2875
+        userCondition: null
+handle: search
+hasTitleField: true
+name: Search
+section: 5f021491-7c29-4320-be70-454d594268af # Page
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: language
+sortOrder: 5
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: language

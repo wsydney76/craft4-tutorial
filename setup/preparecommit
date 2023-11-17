@@ -3,6 +3,9 @@
 # Delete all but the most recent revision
 ddev craft utils/prune-revisions --max-revisions=1
 
+# Rebuild project config
+ddev craft project-config/rebuild
+
 # Backup the database
 ddev craft db/backup setup/seed.sql --zip --overwrite=1
 
