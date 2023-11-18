@@ -53,6 +53,7 @@ return [
     'Special' => 'Spezial',
     'Style' => 'Stil',
     'Search results will be display here.' => 'Suchergebnisse werden hier angezeigt.',
+    'Subheading' => 'Untertitel',
     'System Files' => 'Systemdateien',
     'Topics will be displayed here' => 'Themen werden hier angezeigt',
     'Volumes' => 'Volumen',

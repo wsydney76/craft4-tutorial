@@ -50,15 +50,25 @@
     {% block main %}
         <main id="content" class="{{ widthClasses[mainWidth] }} mt-8">
             {% block title %}
-                <h1 class="mb-12 text-4xl sm:text-5xl md:text-6xl sm:leading-tight md:leading-tight">{{ title }}</h1>
+                <div class="mb-8">
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl sm:leading-tight md:leading-tight">{{ title }}</h1>
+                    {% if entry.subheading %}
+                        <div class="mt-8 text-2xl">
+                            {{ entry.subheading }}
+                        </div>
+                    {% endif %}
+                </div>
             {% endblock %}
 
             {% block content %}
-                {% if entry is defined and entry.bodyContent %}
-                    {% include '_partials/blocks.twig' with {
-                        query: entry.bodyContent
-                    } only %}
+                {% if entry is defined %}
+                    {% if entry.bodyContent %}
+                        {% include '_partials/blocks.twig' with {
+                            query: entry.bodyContent
+                        } only %}
+                    {% endif %}
                 {% endif %}
+                
             {% endblock %}
 
         </main>
