@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "080378300bcd66d0a9da04380e517eda",
+    "content-hash": "c2ff1a16de9197de84bffa4e45ead7b1",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -491,11 +491,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "4.5.13",
+            "version": "4.5.14",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/c94af041eaca79540eac8ce4352e7d5737de6785",
-                "reference": "c94af041eaca79540eac8ce4352e7d5737de6785",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/27277014272e8d372f0294bee60b274816f336b9",
+                "reference": "27277014272e8d372f0294bee60b274816f336b9",
                 "shasum": ""
             },
             "require": {
@@ -583,7 +583,7 @@
                 "docs": "https://craftcms.com/docs/4.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2023-12-15T19:23:31+00:00"
+            "time": "2024-01-02T17:52:44+00:00"
         },
         {
             "name": "craftcms/plugin-installer",
@@ -5237,5 +5237,5 @@
     "platform-overrides": {
         "php": "8.0.2"
     },
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
