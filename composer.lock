@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c2ff1a16de9197de84bffa4e45ead7b1",
+    "content-hash": "5f0c17c519d7ab67cd8b798a15ff7346",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -491,11 +491,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "4.5.14",
+            "version": "4.6.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/27277014272e8d372f0294bee60b274816f336b9",
-                "reference": "27277014272e8d372f0294bee60b274816f336b9",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/4d5f71c154cd2e01cfd771e55ed43703a59cf844",
+                "reference": "4d5f71c154cd2e01cfd771e55ed43703a59cf844",
                 "shasum": ""
             },
             "require": {
@@ -583,7 +583,7 @@
                 "docs": "https://craftcms.com/docs/4.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2024-01-02T17:52:44+00:00"
+            "time": "2024-01-09T17:57:33+00:00"
         },
         {
             "name": "craftcms/plugin-installer",
@@ -1968,11 +1968,11 @@
         },
         {
             "name": "phpstan/phpdoc-parser",
-            "version": "1.24.5",
+            "version": "1.25.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/fedf211ff14ec8381c9bf5714e33a7a552dd1acc",
-                "reference": "fedf211ff14ec8381c9bf5714e33a7a552dd1acc",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/bd84b629c8de41aa2ae82c067c955e06f1b00240",
+                "reference": "bd84b629c8de41aa2ae82c067c955e06f1b00240",
                 "shasum": ""
             },
             "require": {
@@ -1990,7 +1990,7 @@
                 "MIT"
             ],
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
-            "time": "2023-12-16T09:33:33+00:00"
+            "time": "2024-01-04T17:06:16+00:00"
         },
         {
             "name": "pixelandtonic/imagine",
