@@ -1,6 +1,6 @@
-# Craft 4 Empty Starter
+# Craft 4 Solo - Tutorial
 
-This is a pure Craft CMS starter as provided in the craftcms/craft package with 
+This tutorial/workshop started as a pure Craft CMS starter as provided in the craftcms/craft package with 
 the following additions:
 
 * Added modules/_faux to enable autocompletion for some most frequently used variables in twig
@@ -8,8 +8,22 @@ the following additions:
 * Set system timezone to Europe/Berlin
 * Added /web/cpresources, /node_modules, /config/license.key to .gitignore
 * Added more config settings and use fluent syntax in config/general.php
-* Added config/redactor/Custom.json as a safe Redactor config
-* Added setup/install for automated installation under ddev, creates a user `admin/password`
+
+We then built a extended version of Craft's official tutorial.
+
+## Tutorial setup
+
+* Added setup/install for automated installation under ddev, imports a demo database with a user `admin/password`.
+* Added multi-lingual support
+* Added sections Home/Page/Post/SiteInfo/Topic
+* Added fields for sections incl. a simple matrix content builder.
+* Added sample content (mostly AI generated/translated)
+* Added twig frontend templates
+* Added CP styles
+* Added CP template ui elements
+* * Display existing drafts
+* * Display usage for assets
+* Basic Tailwind CSS setup
 
 ## DDEV Installation
 
@@ -17,8 +31,13 @@ the following additions:
 * `cd` into project directory
 * Run `bash setup/install`
 
-## Install Tailwind CSS (optional)
+## Screenshots
 
-* `cd` into project directory
-* Run `bash setup/install-tailwind`
+![Screenshot home page](/screenshot-home.jpg)
+
+![Screenshot post index page](/screenshot-posts.jpg)
+
+![Screenshot drafts ui element](/screenshot-drafts.jpg)
+
+![Screenshot usages ui element](/screenshot-usages.jpg)
 
