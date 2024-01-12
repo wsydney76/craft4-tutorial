@@ -18,7 +18,7 @@ We then built a extended version of Craft's official tutorial.
 * Added sections Home/Page/Post/SiteInfo/Topic
 * Added fields for sections incl. a simple matrix content builder.
 * Added sample content (mostly AI generated/translated)
-* Added twig frontend templates
+* Added twig frontend templates with a lot of comments that should be helpful for beginners.
 * Added CP styles
 * Added CP template ui elements
 * * Display existing drafts
@@ -29,7 +29,7 @@ We then built a extended version of Craft's official tutorial.
 
 * Clone repository
 * `cd` into project directory
-* Run `bash setup/install`
+* Run `bash setup/install <projectname>`
 
 ## Screenshots
 
