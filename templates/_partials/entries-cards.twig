@@ -1,16 +1,23 @@
+{# The cards layout as used in post index #}
+
+{# Eager load featured Image and first text block #}
 {% set query = query
     .with([
         ['featuredImage', {withTransforms: [craft.app.config.custom.cardTransform]}],
         ['bodyContent', {type: 'text', limit: 1}]
     ]) %}
 
+{# Execute paginated query #}
 {% paginate query.limit(craft.app.config.custom.cardsPerPage) as pageInfo, entries %}
 
 {% if entries %}
 
+    {# Use embed for consistent grid layout #}
     {% embed '_layouts/partials/cards.twig' %}
         {% block content %}
             {% for entry in entries %}
+
+                {# Use embed for consistent card layout #}
                 {% embed '_layouts/partials/card.twig' with {
                     image: entry.featuredImage.one ?? siteInfo.featuredImage.one,
                     url: entry.url
@@ -21,6 +28,10 @@
                         {% set block = entry.bodyContent.one %}
                         {% if block %}
                             <div class="mt-2 text-sm">
+                                {# 
+                                The truncated first text block. 
+                                Avoid showing markdown stuff or invalid html tags.
+                                #}
                                 {{ block.text|md|striptags|truncate(120) }}
                             </div>
                         {% endif %}
@@ -31,6 +42,7 @@
     {% endembed %}
 
 
+    {# Show pagination nav. #}
     {% include '_layouts/partials/pagination.twig' with {
         pageInfo
     } only %}

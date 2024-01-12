@@ -1,14 +1,21 @@
+{# The search page #}
+
 {% extends "_layouts/main.twig" %}
 
+{# Use wide layout #}
 {% do _globals.set({
     mainWidth: 'xl'
 }) %}
 
+{# Get param from url, will be null if not present #}
 {% set searchQuery = craft.app.request.getParam('q') %}
 
+{# Don't show a featured image here #}
 {% block featured %}{% endblock %}
 
 {% block content %}
+
+    {# The search form #}
     <form class="bg-white border border-brand-300 shadow-md p-4 md:flex md:space-x-4 items-center">
 
         <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 whitespace-nowrap" for="search-query">
@@ -31,11 +38,15 @@
 
     {% if searchQuery %}
 
+        {# Execute the search #}
+
+        {# The search query #}
         {% set query = craft.entries()
             .section('post')
             .search(searchQuery)
             .orderBy('score') %}
 
+        {# This is actually a duplicate query, as we need the count beforehand. #}
         {% set count = query.count %}
 
         {% if count %}

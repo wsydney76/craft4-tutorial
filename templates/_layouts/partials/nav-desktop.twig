@@ -1,4 +1,8 @@
 {% for navEntry in navEntries %}
+    {#
+    Underline current nav. This requires the slug of an index page (e.g 'posts') and the
+    first part of a channel entry to match (e.g. 'posts/my-first-post')
+    #}
     {% set attr = craft.app.request.segment(1) == navEntry.slug ? {class: 'underline'} : {} %}
     {{ navEntry.link|attr(attr) }}
 {% endfor %}

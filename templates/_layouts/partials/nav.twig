@@ -1,7 +1,10 @@
+{# Cache this, because it involves a lot of queries #}
 {% cache %}
 
+    {# Show a navigation item for all level one pages #}
     {% set navEntries = craft.entries.section('page').level(1).all %}
 
+    {# localizedUrls for site switching #}
     {% if entry is defined %}
         {# Convert to object, so that this data can be used in same format whether entry exists or not #}
         {% set localizedUrls = entry.localized.all|map(e => {url: e.url, name: e.site.name}) %}
@@ -12,19 +15,21 @@
     {% endif %}
 
     <nav class="my-4 md:flex md:justify-between md:items-center">
+        {# Site name with home url #}
         <div>
             {# Do it this way so that preview tokens are added to the url. Won't happen with just {{ siteUrl }} #}
             {% set homePageEntry = craft.entries.section('home').one %}
             <a class="font-bold text-3xl" href="{{ homePageEntry.url }}">{{ siteInfo.siteName }}</a>
         </div>
 
+        {# Desktop nav #}
         <div class="hidden md:flex flex-wrap space-x-4 rtl:space-x-reverse">
             {% include '_layouts/partials/nav-desktop.twig' with {
                 navEntries, localizedUrls
             } only %}
         </div>
 
-
+        {# Mobile nav #}
         <div class="md:hidden">
             {% include '_layouts/partials/nav-mobile.twig' with {
                 navEntries, localizedUrls

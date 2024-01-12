@@ -1,4 +1,9 @@
+{# Show all incoming relationships. (e.g. usage of images) #}
+
+{# Note: This is not a generic functionality, it has to be adjusted if the content model changes. #}
+
 <div>
+    {# Get anything regardless of status/draft/site/whatever #}
     {% set entries = craft.entries
         .relatedTo([
             'or',

@@ -1,3 +1,5 @@
+{# Show current topic in its position in the hierarchy #}
+
 <div class="flex items-center space-x-4 rtl:space-x-reverse">
 
     {% set parent = entry.parent %}
@@ -5,6 +7,8 @@
 
     {% if parent or children %}
         {% if parent %}
+
+            {# Show a button linking to parent #}
             {% include '_partials/entries-buttons.twig' with {
                 entry: parent
             } only %}
@@ -13,12 +17,15 @@
             </div>
         {% endif %}
 
+        {# the current entry #}
         <div class="font-semibold text-xl">
             {{ entry.title }}
         </div>
 
 
         {% if children %}
+            {# Show buttons linking to children #}
+            {# TODO: check responsive layout?? #}
             <div>
                 &gt;
             </div>

@@ -1,9 +1,12 @@
+{# Meta info like author, post date #}
+
 {% embed '_layouts/partials/box.twig' %}
     {% block content %}
 
         {% from '_macros/lib.twig' import img %}
 
         <section class="flex space-x-4 rtl:space-x-reverse items-center">
+            {# Author's photo #}
             {% set image = entry.author.photo %}
 
             {% if image %}
@@ -14,6 +17,7 @@
             {% endif %}
 
             <div>
+                {# Note that the date format will change depending on the language #}
                 {{ 'Published on {date} by {name}'|t({
                     date: entry.postDate|datetime('short'),
                     name: entry.author.name

@@ -1,25 +1,30 @@
 {% from '_macros/lib.twig' import img %}
 
 {% set image = block.image.one %}
-{% set wide = block.style.contains('wide')%}
+{% set wide = block.style.contains('wide') %}
 {% set fullHeight = block.style.contains('fullHeight')%}
 
 {% if image %}
+    {# Apply negative margin for images with 'wide' style on larger screens #}
     <figure class="{{ wide ? 'lg:-mx-24' }}">
 
-        {# Ratio 21:9 #}
+        {# Adjust transforms based on block attributes #}
+        {# TODO: Check srcsets #}
         {{ img(image, {
             transform: wide ? {width: 1024, height: fullHeight ? null : 440} : {width: 825, height: fullHeight ? null : 350},
             scrset: wide ?  [1024, 825, 400] : null
         }) }}
 
-
+        {# Add caption if one of caption or image copyright is present #}
         {% if block.caption or image.copyright %}
             <figcaption class="flex justify-between">
                 <div>
                     {{ block.caption }}
                 </div>
                 {% if image.copyright %}
+                    {# Make that a bit smaller #}
+                    {# We don't use an overlay here because having an overlay on the image
+                    and a caption below looks messed up. #}
                     <div class="text-sm text-brand-500">({{ 'Photo'|t }}: {{ image.copyright }})</div>
                 {% endif %}
             </figcaption>

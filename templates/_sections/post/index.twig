@@ -1,15 +1,21 @@
+{# The post #}
+
 {% extends "_layouts/main.twig" %}
 
+{# set condition for prev/next navigation #}
 {% do _globals.set('entryNavCondition', {section: 'post', orderBy: 'postDate desc'}) %}
 
 {% block content %}
 
+    {# Meta stuff for the post #}
     {% include '_sections/post/meta.twig' with {
     	entry
     } only %}
 
+    {# The body content #}
     {{ parent() }}
 
+    {# Show topics #}
     {% include '_partials/entries-buttons.twig' with {
         entries: entry.topics,
         prefix: 'Topic'|t

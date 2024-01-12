@@ -1,9 +1,19 @@
+{# A Topic #}
+
 {% extends "_layouts/main.twig" %}
 
+{#
+We do not use Craft's build in 'Maintain hierarchy' setting,
+because we want to avoid redundant relationships and handle hierarchy ourselves.
+#}
+
+{# Ids of the current topic and its children. (There are only two levels) #}
 {% set allTopicIds = (entry.children.ids|push(entry.id)) %}
 
+{# Get the latest related post, so that we can use its feature image for the topic as well. #}
 {% set latestPost = craft.entries.section('post').relatedTo(allTopicIds).one %}
 
+{# Prefix the title with 'Topic: ' #}
 {% do _globals.set({
     title: "#{'Topic'|t}: #{entry.title}",
     featuredImage: latestPost ? latestPost.featuredImage.one : null,
@@ -12,12 +22,15 @@
 
 {% block content %}
 
-    {% include '_sections/topics/hierarchy.twig' with {
-    	entry
+    {# Show parent/children #}
+    {% include '_sections/topic/hierarchy.twig' with {
+        entry
     } only %}
 
+    {# Show related posts #}
     {% include '_partials/entries-cards.twig' with {
-        query: craft.entries.section('post')
-            .relatedTo(allTopicIds)
+        query: craft.entries
+            .section('post')
+            .topics(allTopicIds)
     } only %}
 {% endblock %}

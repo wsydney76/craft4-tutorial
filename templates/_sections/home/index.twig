@@ -1,12 +1,15 @@
-{% extends "_layouts/main.twig" %}
+{# The home page #}
 
+{% extends "_layouts/main.twig" %}
 
 {% block content %}
 
     {{ parent() }}
 
+    {# Demo for cache tag, experiment with adding/renaming/deleting posts #}
     {% cache %}
 
+        {# Just a list of new posts #}
         {% include '_partials/entries-list.twig' with {
             heading: 'New Posts'|t,
             query: craft.entries
@@ -14,8 +17,7 @@
                 .limit(5)
                 .orderBy('postDate desc')
         } only %}
-
-
+        
     {% endcache %}
 
 {% endblock %}

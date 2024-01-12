@@ -1,7 +1,11 @@
+{# The post index #}
+
 {% extends "_layouts/main.twig" %}
 
+{# Use the featured image of the newest post also for the index page #}
 {% set latestPost = craft.entries.section('post').one %}
 
+{# Use wide layout #}
 {% do _globals.set({
     featuredImage: latestPost ? latestPost.featuredImage.one : null,
     mainWidth: 'xl'

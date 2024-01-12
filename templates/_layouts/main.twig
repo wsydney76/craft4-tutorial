@@ -1,6 +1,10 @@
 {% apply spaceless %}
 
     {#
+    This is the main layout template that all pages can extend and overwrite twig blocks as needed
+    #}
+
+    {#
     Set variables for layout, so that
         * we enable pages that are not backed by an entry
         * let templates overwrite default entry values
@@ -12,6 +16,7 @@
     {# let templates overwrite featured image, use global images by default #}
     {% set featuredImage = _globals.get('featuredImage') ?? entry.featuredImage.one ?? siteInfo.featuredImage.one %}
 
+    {# let templates decide which page width to use #}
     {% set mainWidth = _globals.get('mainWidth') ?? 'md' %}
     {% set widthClasses = {
         md: 'max-w-screen-md mx-auto',
@@ -21,22 +26,35 @@
 {% endapply -%}
 <!DOCTYPE html>
 <html lang="{{ craft.app.language }}" dir="{{ craft.app.locale.orientation }}" style="overflow-y: scroll;">
-<head>
-    {% include '_layouts/partials/head.twig' %}
-</head>
+{# The style will make sure there is always a vertical scrollbar, so that there no anoying horizontal shifts for short pages #}
+
+{% include '_layouts/partials/head.twig' %}
 
 {% block body %}
     <body class="bg-brand-50 text-prose px-4">
 
-    {# let screen reader users skip page heading #}
     {% block header %}
+
+        {# let screen reader users skip page heading #}
         <a href="#content" class="sr-only focus:not-sr-only">{{ 'Jump to content'|t }}</a>
 
+        {# Use semantic html wherever possible #}
         <header class="mb-8 max-w-screen-xl mx-auto">
 
+            {# The top bar #}
             {% include '_layouts/partials/nav.twig' %}
 
+            {#
+            We output common things like featuredImage / title in the main template
+            in order to enforce a consistent layout across all pages.
+            #}
+
             {% block featured %}
+                {#
+                Always code defensive!
+                Values may be missing, even if custom fields are 'required' in their field layout.
+                Think of live preview!
+                #}
                 {% if featuredImage %}
                     {% include '_layouts/partials/featured-image.twig' with {
                         image: featuredImage
@@ -48,11 +66,13 @@
     {% endblock %}
 
     {% block main %}
+        {# Apply classes form the lookup table #}
         <main id="content" class="{{ widthClasses[mainWidth] }} mt-8">
             {% block title %}
                 <div class="mb-8">
+                    {# Response font sizes for different screen widths #}
                     <h1 class="text-4xl sm:text-5xl md:text-6xl sm:leading-tight md:leading-tight">{{ title }}</h1>
-                    {% if entry.subheading %}
+                    {% if entry is defined and entry.subheading %}
                         <div class="mt-8 text-2xl">
                             {{ entry.subheading }}
                         </div>
@@ -60,15 +80,20 @@
                 </div>
             {% endblock %}
 
+            {#
+            Output blocks from the content builder.
+            Templates that overwrite this block can pull that in using 'parent()'
+            #}
             {% block content %}
                 {% if entry is defined %}
                     {% if entry.bodyContent %}
+
+                        {# Just pass the query, so that the include can add stuff like eager loading on its own. #}
                         {% include '_partials/blocks.twig' with {
                             query: entry.bodyContent
                         } only %}
                     {% endif %}
                 {% endif %}
-                
             {% endblock %}
 
         </main>
@@ -76,6 +101,7 @@
 
     {% block footer %}
 
+        {# Previous/Next navigation #}
         {% if _globals.get('entryNavCondition') %}
             <div class="max-w-screen-xl mx-auto">
                 {% include '_layouts/partials/entry-nav.twig' with {
@@ -85,16 +111,8 @@
             </div>
         {% endif %}
 
-        <footer class="max-w-screen-xl mx-auto mt-12 border-t border-gray-400 py-4 flex justify-between">
-            <div>
-                &copy; {{ now|date('Y') }} {{ siteInfo.copyright }}
-            </div>
-            {% if entry is defined %}
-                <div>
-                    <a class="text-sm text-gray-600" href="{{ entry.cpEditUrl }}">{{ 'Edit'|t }}</a>
-                </div>
-            {% endif %}
-        </footer>
+        {# The page footer #}
+        {% include '_layouts/partials/footer.twig' %}
     {% endblock %}
 
     </body>

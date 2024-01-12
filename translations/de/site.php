@@ -21,6 +21,7 @@ return [
     'Search' => 'Suche',
     'Search for:' => 'Suche nach:',
     'Start' => 'Starten',
+    'Untitled' => 'Ohne Titel',
     '{count,plural,=1{search result} other{search results}}' => '{count,plural,=1{Suchergebnis} other{Suchergebnisse}}',
     'Your search for "{q}" didn’t return any results.' => 'Ihre Suche nach "{q}" ergab keine Ergebnisse.',
 

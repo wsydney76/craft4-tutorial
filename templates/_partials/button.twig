@@ -1,4 +1,10 @@
+{# Display a button #}
 {% set type = type ?? 'link' %}
+
+{#
+You may think of using Tailwind's @apply statement here.
+We would recommend to avoid it and build properly designed components.
+#}
 
 {% switch type %}
 

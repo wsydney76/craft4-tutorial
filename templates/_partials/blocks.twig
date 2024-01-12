@@ -1,9 +1,17 @@
 {% set blocks = query.all %}
 
+{# 
+We might add eager loading for images etc here, 
+however, based on average count of blocks, this may not be significant.
+Only measuring with real world data will tell.
+#}
+
 {% if blocks %}
+    {# Output content builder blocks with Tailwind typography. #}
     <div class="my-8 prose prose-lg prose-slate max-w-none hyphens-auto">
         {% for block in blocks %}
             <div>
+                {# Call the block template #}
                 {% include "_blocks/#{block.type.handle|kebab}.twig" with {
                     blocks,
                     block

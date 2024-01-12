@@ -1,9 +1,0 @@
-{% set transform = transform|default({width: 825, height: 300, format: 'webp'}) %}
-
-{% if srcset is not defined and transform.width >= 825 %}
-    {% set srcset = [480, 300] %}
-{% endif %}
-
-{% set srcset = srcset|default([]) %}
-
-{{ image.img(transform, srcset)|attr({alt: image.altText ?: image.title}) }}

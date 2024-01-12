@@ -1,25 +1,46 @@
+{#
+Show an image.
+This can get really complex in a real world application,
+especially when using a third party plugin like imager-x
+with a lot of options, or when delivering different formats.
+
+However, images should always be output via a macro and not by using 'image.img()'
+#}
+
 {% macro img(image, config = []) %}
+
+    {# Use a default transform if not specified #}
     {% set transform = config.transform ?? {width: 825} %}
 
+    {# Use a common format #}
     {% if transform.format is not defined %}
         {% set transform = transform|merge({format: 'webp'}) %}
     {% endif %}
 
+    {# Use a default srcset if not specified #}
     {% set srcset = config.srcset ?? [825, 480] %}
 
+    {# Don't use srcset for small images #}
     {% if transform.width is defined and transform.width < 480 %}
         {% set srcset = null %}
     {% endif %}
 
 
+    {# Use lazy loading by default #}
     {% set attr = config.attr ?? {loading: 'lazy'} %}
 
+    {# Merge in alt text #}
     {% set attr = attr | merge({alt: image.altText ?: image.title}) %}
+
+    {# Finally... #}
     {{ image.img(transform, srcset)|attr(attr) }}
     
 {% endmacro %}
 
-{# This must be called within a figure tag with position: relative #}
+{#
+Show copyright info in the bottom right corner of an image.
+This must be called within a figure tag with position: relative
+#}
 {% macro copyrightOverlay(copyright) %}
     {% if copyright %}
         <figcaption class="absolute bottom-0 right-0 px-2 py-1 bg-black/50 text-white text-sm">

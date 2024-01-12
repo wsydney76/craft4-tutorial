@@ -1,3 +1,9 @@
+{# Pull in a template dynamically
+
+Inside double quotes there is a string interpolation like this: #{expression}
+
+The kebap filter converts a value into a better suitable filename here, e.g tableOfContents -> table-of-contents
+#}
 {% include "_blocks/special/#{block.blockType.value|kebab}.twig" with {
     blocks,
     block
