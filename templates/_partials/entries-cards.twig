@@ -1,5 +1,7 @@
 {# The cards layout as used in post index #}
 
+{# @param query EntryQuery #}
+
 {# Eager load featured Image and first text block #}
 {% set query = query
     .with([

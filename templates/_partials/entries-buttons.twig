@@ -1,5 +1,9 @@
 {# A list of buttons linking to entries #}
 
+{# @param entry ?Entry Buttons for a single entry #}
+{# @param entries ?[Entry] Buttons for multiple entries #}
+{# @param prefex ?string Prefix before entry title #}
+
 {% if entry is defined  %}
     {% set entries = entry ? [entry] : null %}
 {% endif %}

@@ -2,6 +2,8 @@
 
 {% extends "_layouts/main.twig" %}
 
+{# @param entry Entry #}
+
 {# set condition for prev/next navigation #}
 {% do _globals.set('entryNavCondition', {section: 'post', orderBy: 'postDate desc'}) %}
 

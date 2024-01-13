@@ -1,5 +1,8 @@
 {# Get all drafts #}
 {# TODO: include provisional drafts from other users #}
+
+{# @param element Element entry or asset #}
+
 {% set entries = craft.entries.draftOf(element).id('not ' ~ element.id).collect %}
 {% if entries.count %}
     <div class="readable">

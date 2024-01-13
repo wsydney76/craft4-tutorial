@@ -1,6 +1,8 @@
 {# A single card #}
 
-{# Required params: url, image #}
+{# @param url string #}
+{# @param image Asset #}
+{# @param entry ?Entry #}
 
 {% from '_macros/lib.twig' import img %}
 {% from '_macros/lib.twig' import copyrightOverlay %}
@@ -25,11 +27,13 @@
         {% block content %}{% endblock %}
 
         {# Include section/entry type specific content #}
-        {% include [
-            "_sections/#{entry.section.handle}/types/#{entry.type.handle}/card-content.twig",
-            "_sections/#{entry.section.handle}/card-content.twig",
-        ] ignore missing with {
-            entry
-        } only %}
+        {% if entry is defined %}
+            {% include [
+                "_sections/#{entry.section.handle}/types/#{entry.type.handle}/card-content.twig",
+                "_sections/#{entry.section.handle}/card-content.twig",
+            ] ignore missing with {
+                entry
+            } only %}
+        {% endif %}
     </div>
 </a>

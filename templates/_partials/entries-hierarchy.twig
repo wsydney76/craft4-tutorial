@@ -1,4 +1,8 @@
 {# Show structure entries #}
+
+{# @param query EntryQuery #}
+{# @param heading ?string #}
+
 <section class="mt-8 prose prose-slate">
 
     {% set entries = query.all %}
@@ -21,7 +25,6 @@
                 </li>
             {% endnav %}
         </ul>
-
 
     {% endif %}
 

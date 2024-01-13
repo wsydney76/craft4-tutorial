@@ -1,4 +1,7 @@
 {# Show post date and author in cards #}
+
+{# @param entry Entry #}
+
 <div class="mt-4 text-sm font-semibold text-gray-600">
     {{ entry.postDate|date('short') }},
     {{ entry.author.name }}

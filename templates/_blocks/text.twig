@@ -1,2 +1,5 @@
 {# Add the purify filter because markdown can contain malicious code like <script> #}
+
+{# @param block MatrixBlock #}
+
 {{ block.text|md|purify }}

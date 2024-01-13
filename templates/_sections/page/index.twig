@@ -1,4 +1,7 @@
 {# Include template for current entry type #}
+
+{# @param entry Entry #}
+
 {% include "_sections/page/types/#{entry.type.handle|kebab}.twig" with {
     entry
 } %}
