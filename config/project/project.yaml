@@ -1,7 +1,7 @@
 assets:
   tempSubpath: temporary-uploads
   tempVolumeUid: efd6d899-7b71-4318-8402-669e92416168 # System Files
-dateModified: 1705064005
+dateModified: 1705150137
 elementSources:
   craft\elements\Asset:
     -
@@ -82,6 +82,30 @@ elementSources:
       label: 'Missing copyright'
       tableAttributes:
         - 'field:a73e7c96-e9d2-4751-bf01-8a6baf5f3c46' # Alt Text
+        - imageSize
+        - location
+      type: custom
+    -
+      heading: 'Search & Filter'
+      type: heading
+    -
+      condition:
+        class: craft\elements\conditions\assets\AssetCondition
+        conditionRules:
+          -
+            class: craft\elements\conditions\assets\VolumeConditionRule
+            operator: in
+            uid: ae1f36c8-c42f-4b7c-ba2a-f2b4806961dc
+            values:
+              - c9a4fbad-6ca0-4e20-ba72-da2c14a38190 # Images
+        elementType: craft\elements\Asset
+        fieldContext: global
+      defaultSort:
+        - title
+        - asc
+      key: 'custom:8fd11ae7-3d29-498d-bf12-1a69de711299'
+      label: 'All images'
+      tableAttributes:
         - imageSize
         - location
       type: custom
