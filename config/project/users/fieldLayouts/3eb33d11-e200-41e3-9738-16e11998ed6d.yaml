@@ -1,0 +1,22 @@
+tabs:
+  -
+    elementCondition: null
+    elements:
+      -
+        attribute: addresses
+        elementCondition: null
+        id: null
+        instructions: null
+        label: null
+        orientation: null
+        requirable: false
+        required: false
+        tip: null
+        type: craft\fieldlayoutelements\users\AddressesField
+        uid: 291f54f2-6f3d-4209-a8c1-35c2b0405464
+        userCondition: null
+        warning: null
+        width: 100
+    name: Profile
+    uid: 98c1cd32-be22-4ba4-b4ad-9b4bd1545bbc
+    userCondition: null
